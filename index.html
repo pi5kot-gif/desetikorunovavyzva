@@ -6,12 +6,11 @@
   <base href="./" />
   <title>Desetikorunová výzva 💛</title>
 
-  <meta name="description" content="Desetikorunová výzva – 5 milionů lidí, každý pošle 10 Kč. Jednoduchý nápad, který může změnit svět.">
-  <meta name="keywords" content="desetikorunová výzva, výzva, dar, 10 korun, podpora, projekt, Česko">
+  <meta name="description" content="Desetikorunová výzva – 5 milionů lidí, každý pošle 10 Kč jako dobrovolný dar. Jednoduchý nápad, který může změnit svět.">
   <meta name="author" content="Desetikorunová výzva">
 
   <meta property="og:title" content="Desetikorunová výzva 💛" />
-  <meta property="og:description" content="5 milionů lidí × 10 Kč = velká změna." />
+  <meta property="og:description" content="5 milionů lidí × 10 Kč = velká změna. Pošli dobrovolný dar.">
   <meta property="og:image" content="assets/logo.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pi5kot-gif.github.io/desetikorunovavyzva/" />
@@ -40,19 +39,39 @@
       </p>
 
       <p class="small">
-        Transparentní sbírka a konkrétní cíl budou zveřejněny po spuštění projektu.  
-        Zatím můžeš dát vědět, že do toho půjdeš s námi. 💛
+        Každý dar bude veden na <strong>transparentním účtu Fio banky</strong>,  
+        aby každý viděl, kam peníze jdou.  
+        Tento projekt nepřijímá platby za služby ani produkty – jde výhradně o dobrovolné dary.
       </p>
-
-      <button id="joinButton">💛 Chci být u toho</button>
     </section>
 
+    <!-- 💛 Sekce pro dar -->
+    <section class="donate">
+      <h2>Pošli dobrovolný dar 10 Kč</h2>
+      <p>
+        Stačí naskenovat QR kód nebo odeslat dar ručně.<br>
+        Každá částka pomáhá – děkujeme! 💛
+      </p>
+
+      <img src="assets/qr_placeholder.png" alt="QR platba 10 Kč" class="qr">
+
+      <div class="account">
+        <p><strong>Číslo účtu:</strong> 123456789/2010 (Fio banka)</p>
+        <p><strong>Zpráva pro příjemce:</strong> Dar – Desetikorunová výzva</p>
+      </div>
+
+      <a href="https://ib.fio.cz/ib/transparent?a=123456789" target="_blank" class="donate-button">
+        💛 Zobrazit transparentní účet
+      </a>
+    </section>
+
+    <!-- 💬 Kroky výzvy -->
     <section class="steps">
       <h2>Jak to bude fungovat</h2>
 
       <div class="step">
         <div class="icon">💛</div>
-        <h3>1. Pošli 10 Kč</h3>
+        <h3>1. Pošli dar 10 Kč</h3>
         <p>Symbolický dar, který nic nezmění v tvé peněžence, ale může změnit svět.</p>
       </div>
 
@@ -73,7 +92,5 @@
   <footer>
     <p>© 2025 Desetikorunová výzva · jednoduchý nápad, velká síla</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
