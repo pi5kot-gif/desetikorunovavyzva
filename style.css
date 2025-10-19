@@ -53,40 +53,45 @@ main {
 
 /* === QR SEKCE === */
 .donate {
-  border: none !important;
-  outline: none !important;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0 auto 3rem;
+  padding: 0;
+}
+
+.donate-box {
   background: #fff;
   border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.donate * {
-  border: none !important;
-  outline: none !important;
+.qr-wrapper {
+  background: #fff; /* ✅ neutralizuje Safari outline */
+  border-radius: 12px;
+  display: inline-block;
+  padding: 6px;
 }
 
-/* ✅ QR obrázek – odstranění všech okrajů Safari */
 .qr {
+  display: block;
   width: 200px;
   height: 200px;
-  margin: 1.5rem 0;
-  cursor: pointer;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  background: transparent;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: #fff;
 }
 
 .account {
   font-size: 0.95rem;
   line-height: 1.5;
+  margin-top: 1.5rem;
 }
 
 /* === BUTTONS === */
@@ -110,7 +115,6 @@ main {
   width: 100%;
   max-width: 600px;
   padding: 2rem;
-  border: none;
   border-radius: 20px;
   background: #ffd600;
   color: #222;
