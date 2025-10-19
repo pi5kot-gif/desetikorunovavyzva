@@ -172,29 +172,29 @@ main {
 /* === PROGRESS SEKCE === */
 .progress-section {
   text-align: center;
-  padding: 3rem 1rem;
-  background: #fff7cc;
-  border-top: 2px solid #ffd600;
-  border-bottom: 2px solid #ffd600;
+  padding: 1.8rem 1rem;
+  background: #fffbe6; /* jemnější odstín žluté */
+  border-top: 1px solid #ffe45c;
+  border-bottom: 1px solid #ffe45c;
 }
 
 .progress-section h2 {
   color: #222;
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin-bottom: 0.3rem;
 }
 
 .progress-section p {
-  margin-bottom: 1rem;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: 0.8rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .progress-bar {
   background: #eee;
   border-radius: 50px;
-  height: 20px;
+  height: 16px;
   width: 80%;
-  margin: 1rem auto;
+  margin: 0.8rem auto;
   overflow: hidden;
 }
 
