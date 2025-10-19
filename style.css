@@ -53,24 +53,35 @@ main {
 
 /* === QR SEKCE === */
 .donate {
-  all: unset;                /* 🔥 kompletní reset děděných stylů */
-  display: block;
+  border: none !important;
+  outline: none !important;
   background: #fff;
-  border: none !important;   /* jistota – žádný border */
-  outline: none !important;  /* žádný outline */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   max-width: 600px;
   margin: 0 auto 3rem;
   padding: 2rem;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.donate * {
+  border: none !important;
+  outline: none !important;
+}
+
+/* ✅ QR obrázek – odstranění všech okrajů Safari */
 .qr {
   width: 200px;
   height: 200px;
   margin: 1.5rem 0;
   cursor: pointer;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .account {
@@ -184,6 +195,9 @@ footer .legal {
   width: 250px;
   height: 250px;
   margin-bottom: 1rem;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 
 .close {
