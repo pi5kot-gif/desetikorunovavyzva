@@ -52,8 +52,14 @@ main {
 
 .intro p {
   font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.small {
+  font-size: 1rem;
+  opacity: 0.8;
   line-height: 1.6;
-  margin-bottom: 2rem;
 }
 
 /* Tlačítko */
