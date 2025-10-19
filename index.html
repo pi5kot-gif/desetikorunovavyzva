@@ -7,8 +7,6 @@
   <title>Desetikorunová výzva 💛</title>
 
   <meta name="description" content="Desetikorunová výzva – 5 milionů lidí, každý pošle 10 Kč jako dobrovolný dar. Jednoduchý nápad, který může změnit svět.">
-  <meta name="author" content="Desetikorunová výzva">
-
   <meta property="og:title" content="Desetikorunová výzva 💛" />
   <meta property="og:description" content="5 milionů lidí × 10 Kč = velká změna. Pošli dobrovolný dar.">
   <meta property="og:image" content="assets/logo.svg" />
@@ -27,6 +25,7 @@
   </header>
 
   <main>
+    <!-- Úvod -->
     <section class="intro">
       <p>
         Každý den utratíme 10&nbsp;Kč bez přemýšlení.  
@@ -45,7 +44,7 @@
       </p>
     </section>
 
-    <!-- 💛 Sekce pro dar -->
+    <!-- Sekce DAR -->
     <section class="donate">
       <h2>Pošli dobrovolný dar 10 Kč</h2>
       <p>
@@ -65,7 +64,7 @@
       </a>
     </section>
 
-    <!-- 💬 Kroky výzvy -->
+    <!-- Sekce kroků -->
     <section class="steps">
       <h2>Jak to bude fungovat</h2>
 
@@ -75,10 +74,11 @@
         <p>Symbolický dar, který nic nezmění v tvé peněžence, ale může změnit svět.</p>
       </div>
 
-      <div class="step">
+      <div class="step share-step">
         <div class="icon">📣</div>
         <h3>2. Sdílej výzvu</h3>
         <p>Pošli dál odkaz na tuto stránku. Každé sdílení znamená dalšího člověka, který může pomoct.</p>
+        <button id="shareButton">🔗 Sdílet výzvu</button>
       </div>
 
       <div class="step">
@@ -92,5 +92,7 @@
   <footer>
     <p>© 2025 Desetikorunová výzva · jednoduchý nápad, velká síla</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

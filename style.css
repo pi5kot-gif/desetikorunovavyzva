@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* Hlavička */
+/* Header */
 header {
   text-align: center;
   padding: 2.5rem 1rem 1.5rem;
@@ -42,7 +42,7 @@ h1 {
   opacity: 0.85;
 }
 
-/* Hlavní sekce */
+/* Main */
 main {
   flex: 1;
   display: flex;
@@ -73,7 +73,7 @@ main {
   line-height: 1.6;
 }
 
-/* Sekce DAR */
+/* Donate */
 .donate {
   text-align: center;
   background: #fffbea;
@@ -127,7 +127,7 @@ main {
   transform: scale(1.04);
 }
 
-/* Kroky výzvy */
+/* Steps */
 .steps {
   background: #fff;
   border-radius: 16px;
@@ -173,7 +173,24 @@ main {
   color: #444;
 }
 
-/* Patička */
+/* Share button */
+#shareButton {
+  margin-top: 1rem;
+  background: #ffcc00;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+#shareButton:hover {
+  background: #ffdb4d;
+  transform: scale(1.05);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -183,7 +200,7 @@ footer {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.03);
 }
 
-/* Responsivní úpravy */
+/* Responsive */
 @media (max-width: 600px) {
   h1 {
     font-size: 1.6rem;
