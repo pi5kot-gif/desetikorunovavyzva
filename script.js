@@ -1,4 +1,4 @@
-// celé políčko "Sdílej výzvu" je klikací
+// --- Sdílení výzvy ---
 const shareButton = document.getElementById("shareButton");
 
 shareButton.addEventListener("click", async () => {
@@ -12,7 +12,7 @@ shareButton.addEventListener("click", async () => {
     try {
       await navigator.share(shareData);
       showToast("Díky, že výzvu sdílíš 💛");
-    } catch (err) {
+    } catch {
       console.log("Sdílení zrušeno");
     }
   } else {
@@ -21,17 +21,37 @@ shareButton.addEventListener("click", async () => {
   }
 });
 
-// 🟡 jednoduchý toast (moderní oznámení)
+// --- Toast oznámení ---
 function showToast(message) {
   const toast = document.createElement("div");
   toast.className = "toast";
   toast.textContent = message;
   document.body.appendChild(toast);
-
   setTimeout(() => toast.classList.add("show"), 100);
-
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.remove(), 300);
   }, 2800);
 }
+
+// --- QR modál ---
+const qrImage = document.getElementById("qrImage");
+const qrModal = document.getElementById("qrModal");
+const closeModal = document.getElementById("closeModal");
+const donateStep = document.getElementById("donateStep");
+
+function openModal() {
+  qrModal.classList.add("show");
+}
+
+function closeModalFn() {
+  qrModal.classList.remove("show");
+}
+
+qrImage.addEventListener("click", openModal);
+donateStep.addEventListener("click", openModal);
+
+closeModal.addEventListener("click", closeModalFn);
+qrModal.addEventListener("click", (e) => {
+  if (e.target === qrModal) closeModalFn();
+});
