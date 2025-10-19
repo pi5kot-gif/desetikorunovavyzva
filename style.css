@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 /* === HEADER === */
@@ -18,37 +19,34 @@ header {
   text-align: center;
   background: #222;
   color: #fff;
-  padding: 4rem 1rem 2rem;
+  padding: 3rem 1rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* ✅ horizontální střed */
-  justify-content: center; /* ✅ vertikální střed */
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-/* === LOGO – mince === */
 .logo {
-  width: 160px;
-  height: 160px;
+  width: clamp(100px, 25vw, 160px); /* 🧭 mění se podle šířky displeje */
+  height: auto;
   margin: 0 auto 1rem;
   display: block;
   object-fit: contain;
   image-rendering: crisp-edges;
-
   background: none !important;
   box-shadow: none !important;
   filter: none !important;
-  border: none;
 }
 
 h1 {
   color: #ffd600;
-  font-size: 2.4rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 0.4rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 /* === MAIN === */
@@ -61,14 +59,13 @@ main {
 .intro {
   max-width: 800px;
   margin: 0 auto 3rem;
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
 }
 
 /* === QR SEKCE === */
 .donate {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2.5rem 1rem;
   margin: 0 auto 3rem;
   max-width: 600px;
   background: #fff;
@@ -78,28 +75,27 @@ main {
 }
 
 .donate h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   margin-bottom: 1rem;
 }
 
 .donate-desc {
   margin-bottom: 2.5rem;
   line-height: 1.6;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 .qr-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2.5rem auto;
+  margin: 2.2rem auto;
   width: 100%;
-  text-align: center;
 }
 
 .qr {
-  width: 220px;
-  height: 220px;
-  display: block;
-  margin: 0 auto;
+  width: clamp(160px, 40vw, 220px); /* ✅ přizpůsobí se velikosti displeje */
+  height: auto;
   border: none;
   outline: none;
   background: #fff;
@@ -108,7 +104,7 @@ main {
 }
 
 .account {
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.5;
 }
 
@@ -124,7 +120,7 @@ main {
   text-decoration: none;
   cursor: pointer;
   margin-top: 1.5rem;
-  font-size: 1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -132,7 +128,7 @@ main {
   display: block;
   width: 100%;
   max-width: 600px;
-  padding: 2rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
   border-radius: 20px;
   background: #ffd600;
   color: #222;
@@ -154,17 +150,17 @@ main {
 }
 
 .steps h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   margin-bottom: 1.5rem;
 }
 
 .step h3 {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
   margin-bottom: 0.5rem;
 }
 
 .step p {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
   line-height: 1.4;
 }
 
@@ -209,12 +205,13 @@ footer .legal {
   border-radius: 12px;
   text-align: center;
   max-width: 400px;
+  width: 90%;
   position: relative;
 }
 
 .modal-qr {
-  width: 250px;
-  height: 250px;
+  width: clamp(200px, 50vw, 250px);
+  height: auto;
   margin-bottom: 1rem;
   border: none;
   box-shadow: none;
@@ -227,21 +224,4 @@ footer .legal {
   right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 600px) {
-  .btn.large {
-    width: 90%;
-  }
-
-  .qr {
-    width: 180px;
-    height: 180px;
-  }
-
-  .logo {
-    width: 130px;
-    height: 130px;
-  }
 }
