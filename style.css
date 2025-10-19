@@ -11,17 +11,24 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 header {
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 3.5rem 1rem 2rem;
   background: linear-gradient(120deg, #ffd700, #ffec80);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 h1 {
   font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
 }
 
 main {
@@ -30,27 +37,32 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 .intro p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
-  background: #ffcc00;
+  background: linear-gradient(90deg, #ffcc00, #ffe066);
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   font-size: 1.1rem;
   border-radius: 50px;
   cursor: pointer;
-  transition: background 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
 }
 
 button:hover {
-  background: #ffdb4d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer {
@@ -58,16 +70,42 @@ footer {
   padding: 1rem;
   background: #fff7d6;
   font-size: 0.9rem;
+  color: #555;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  opacity: 0.8;
+.logo:hover {
+  transform: rotate(-5deg) scale(1.05);
 }
 
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .intro p {
+    font-size: 1.1rem;
+  }
+  button {
+    width: 100%;
+    max-width: 280px;
+  }
+}

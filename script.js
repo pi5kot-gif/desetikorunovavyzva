@@ -1,3 +1,3 @@
 document.getElementById("joinButton").addEventListener("click", () => {
-  alert("Díky, že se chceš přidat! 💛 Tohle je jen lokální verze – brzy přidáme reálnou možnost daru.");
+  alert("Díky, že se chceš přidat 💛 Tohle je zatím ukázková verze – brzy přidáme možnost reálného zapojení!");
 });
