@@ -52,7 +52,6 @@ main {
   margin-bottom: 3rem;
 }
 
-/* sjednocená velikost všech odstavců v úvodu */
 .intro p,
 .intro .small {
   font-size: 1.15rem;
@@ -94,7 +93,6 @@ main {
   transform: scale(1.05);
 }
 
-/* vystředění textu pod QR */
 .account {
   font-size: 0.95rem;
   margin-top: 1rem;
@@ -137,7 +135,6 @@ main {
   margin-bottom: 1.5rem;
 }
 
-/* sjednocení všech step boxů */
 .step,
 .big-donate-step {
   display: block;
@@ -150,7 +147,6 @@ main {
   transition: all 0.3s ease;
 }
 
-/* specifické barvy */
 .big-donate-step {
   background: #ffef99;
   border: 3px solid #ffd600;
@@ -195,13 +191,22 @@ main {
   color: #333;
 }
 
-/* zvýraznění posledního bloku "Sleduj dopad" */
-.step:last-child {
+/* === Klikací krok 3: Sleduj dopad === */
+.impact-step {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   background: #f4fff4;
   border: 2px solid #b6f5b6;
+  transition: background 0.3s, transform 0.2s;
 }
 
-/* overlay pro sdílení */
+.impact-step:hover {
+  background: #e9ffe9;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
 .share-overlay {
   position: absolute;
   inset: 0;
