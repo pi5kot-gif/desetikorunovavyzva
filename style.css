@@ -96,14 +96,16 @@ main {
   transform: scale(1.05);
 }
 
+/* --- vystředění textu pod QR --- */
 .account {
   font-size: 0.95rem;
   margin-top: 1rem;
-  text-align: left;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .account p {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 /* === tlačítko "Zobrazit transparentní účet" === */
@@ -137,56 +139,30 @@ main {
   margin-bottom: 1.5rem;
 }
 
-/* --- velké tlačítko pro krok 1 --- */
+/* --- sjednocení všech step boxů --- */
+.step,
 .big-donate-step {
   display: block;
   width: 100%;
-  background: #ffef99;
-  border: 3px solid #ffd600;
-  border-radius: 16px;
-  padding: 2rem;
   max-width: 600px;
   margin: 1.5rem auto;
-  cursor: pointer;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  text-align: center;
+}
+
+/* --- specifické barvy --- */
+.big-donate-step {
+  background: #ffef99;
+  border: 3px solid #ffd600;
+  cursor: pointer;
 }
 
 .big-donate-step:hover {
   background: #ffe066;
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
-}
-
-.big-donate-step .icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.big-donate-step h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.big-donate-step p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* --- krok 2 a 3 --- */
-.step {
-  background: #fff;
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
-}
-
-.step .icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
 }
 
 .share-step {
@@ -196,6 +172,29 @@ main {
 
 .share-step:hover {
   background: #d9f0ff;
+}
+
+.step:not(.big-donate-step):not(.share-step) {
+  background: #ffffff;
+}
+
+.step .icon,
+.big-donate-step .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step h3,
+.big-donate-step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p,
+.big-donate-step p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* --- overlay pro sdílení --- */
@@ -290,11 +289,13 @@ footer {
     padding: 1.5rem;
   }
 
-  .big-donate-step {
+  .big-donate-step,
+  .step {
     padding: 1.5rem;
   }
 
-  .big-donate-step h3 {
+  .big-donate-step h3,
+  .step h3 {
     font-size: 1.3rem;
   }
 }
