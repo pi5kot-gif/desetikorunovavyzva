@@ -91,13 +91,40 @@ main {
   display: block;
   width: 100%;
   max-width: 600px;
-  padding: 1.2rem;
+  padding: 1.5rem 2rem;
   border-radius: 16px;
   margin: 1rem auto;
+  text-align: center;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+}
+
+/* STEPS */
+.steps {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.steps h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.step h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* FOOTER */
