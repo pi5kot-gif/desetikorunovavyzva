@@ -11,7 +11,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  scroll-behavior: smooth;
 }
 
 header {
@@ -35,34 +34,35 @@ main {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem 2rem;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .intro p {
   font-size: 1.25rem;
   line-height: 1.7;
   margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 button {
-  background: linear-gradient(90deg, #ffcc00, #ffe066);
+  background: #ffcc00;
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.25s ease;
 }
 
 button:hover {
+  background: #ffdb4d;
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer {
@@ -85,25 +85,16 @@ footer {
   transform: rotate(-5deg) scale(1.05);
 }
 
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
+/* Responsivní úpravy */
 @media (max-width: 600px) {
   h1 {
     font-size: 1.8rem;
   }
+
   .intro p {
     font-size: 1.1rem;
   }
+
   button {
     width: 100%;
     max-width: 280px;
