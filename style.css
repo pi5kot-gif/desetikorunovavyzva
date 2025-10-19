@@ -17,7 +17,7 @@ body {
 header {
   text-align: center;
   padding: 4rem 1rem 2rem;
-  background: linear-gradient(120deg, #ffd700, #ffec80);
+  background: linear-gradient(120deg, #ffd600, #ffec80);
 }
 
 .logo {
@@ -109,7 +109,7 @@ main {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.8rem 1.8rem;
-  background: #ffcc00;
+  background: #ffd600;
   color: #222;
   border-radius: 50px;
   font-weight: 600;
@@ -119,7 +119,7 @@ main {
 }
 
 .transparent-link:hover {
-  background: #ffdb4d;
+  background: #ffeb66;
   transform: translateY(-2px);
 }
 
@@ -147,14 +147,15 @@ main {
   transition: all 0.3s ease;
 }
 
+/* === sjednocená žlutá === */
 .big-donate-step {
-  background: #ffef99;
+  background: #fff3a0;
   border: 3px solid #ffd600;
   cursor: pointer;
 }
 
 .big-donate-step:hover {
-  background: #ffe066;
+  background: #ffe96d;
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
 }
@@ -207,20 +208,13 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.share-overlay {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
 /* === FOOTER === */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background: #fff7d6;
   font-size: 0.9rem;
+  border-top: 1px solid #f0e6b2;
 }
 
 /* === MODAL === */
@@ -265,27 +259,6 @@ footer {
   right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
-}
-
-/* === TOAST === */
-.toast {
-  position: fixed;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ffd700;
-  color: #222;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 500;
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.toast.show {
-  opacity: 1;
-  bottom: 2rem;
 }
 
 /* === RESPONSIVE === */
