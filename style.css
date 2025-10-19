@@ -53,26 +53,17 @@ main {
 
 /* QR SEKCE */
 .donate {
-  background: transparent;
-  border: none;
+  text-align: center;
+  padding: 3rem 1rem;
   margin: 0 auto 3rem;
-  padding: 0;
-}
-
-.donate-box {
+  max-width: 600px;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: none;
+  box-shadow: none;
 }
 
-.donate-box h2 {
+.donate h2 {
   margin-bottom: 1rem;
 }
 
@@ -81,14 +72,15 @@ main {
   line-height: 1.6;
 }
 
-.qr-wrapper {
-  background: #fff;
-  padding: 0;             /* zruš padding pro rovné mezery */
-  border-radius: 12px;
+/* ✅ QR sekce vycentrována s rovnými mezerami */
+.qr-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;         /* stejná mezera nahoře i dole */
+  margin: 2rem 0;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .qr {
@@ -98,6 +90,7 @@ main {
   outline: none;
   display: block;
   background: #fff;
+  margin: 0 auto;
   box-shadow: none;
 }
 
@@ -108,6 +101,7 @@ main {
 
 /* BUTTONS */
 .btn {
+  display: inline-block;
   background: #ffd600;
   color: #222;
   font-weight: 600;
