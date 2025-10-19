@@ -1,7 +1,7 @@
 // celé políčko "Sdílej výzvu" je klikací
-const shareCard = document.getElementById("shareStep");
+const shareButton = document.getElementById("shareButton");
 
-shareCard.addEventListener("click", async () => {
+shareButton.addEventListener("click", async () => {
   const shareData = {
     title: "Desetikorunová výzva 💛",
     text: "Pošli dobrovolný dar 10 Kč a pomoz změnit svět.",

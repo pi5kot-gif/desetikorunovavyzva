@@ -175,6 +175,7 @@ main {
 
 /* === CELOKLIKACÍ SDÍLEJ === */
 .share-step {
+  position: relative;
   cursor: pointer;
   background: #fff4c2;
   border: 2px dashed #ffe066;
@@ -185,6 +186,15 @@ main {
   background: #ffec99;
   box-shadow: 0 0 12px rgba(255, 213, 0, 0.3);
   transform: translateY(-4px);
+}
+
+/* neviditelná klikací vrstva */
+.share-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* === PATIČKA === */
