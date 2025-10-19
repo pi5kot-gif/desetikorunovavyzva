@@ -106,17 +106,23 @@ main {
   margin-bottom: 0.3rem;
 }
 
+/* === tlačítko "Zobrazit transparentní účet" === */
 .transparent-link {
   display: inline-block;
   margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  background: #ffcc00;
+  color: #222;
+  border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
-  color: #c69a00;
-  transition: color 0.3s;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .transparent-link:hover {
-  color: #a47f00;
+  background: #ffdb4d;
+  transform: translateY(-2px);
 }
 
 /* === STEPS === */
@@ -131,7 +137,7 @@ main {
   margin-bottom: 1.5rem;
 }
 
-/* --- nové velké tlačítko pro krok 1 --- */
+/* --- velké tlačítko pro krok 1 --- */
 .big-donate-step {
   display: block;
   width: 100%;
