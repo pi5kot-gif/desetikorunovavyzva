@@ -15,7 +15,7 @@ body {
 
 header {
   text-align: center;
-  padding: 3.5rem 1rem 2rem;
+  padding: 3rem 1rem 2rem;
   background: linear-gradient(120deg, #ffd700, #ffec80);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -36,12 +36,16 @@ main {
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 2rem 1rem 3rem;
 }
 
 .intro {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 3rem auto 4rem; /* zmenšeno vertikálně */
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .intro p {
@@ -87,6 +91,11 @@ footer {
 
 /* Responsivní úpravy */
 @media (max-width: 600px) {
+  .intro {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
   h1 {
     font-size: 1.8rem;
   }
