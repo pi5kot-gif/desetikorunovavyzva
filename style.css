@@ -1,127 +1,61 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-}
-
-body {
-  background: #fdfdfd;
-  color: #222;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Hlavička */
-header {
+/* --- Sekce: Jak to bude fungovat --- */
+.steps {
+  background: #fffbea;
+  padding: 3rem 1rem;
   text-align: center;
-  padding: 2.5rem 1rem 1.5rem;
-  background: linear-gradient(120deg, #ffd700, #ffec80);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.4rem;
+.steps h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
-.subtitle {
-  font-size: 1.05rem;
-  opacity: 0.85;
-}
-
-/* Hlavní sekce */
-main {
-  flex: 1;
+.steps-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  padding: 2rem 1rem 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.intro {
-  max-width: 800px;
-  margin: 2.5rem auto 3rem;
-  padding: 2rem;
-  background: white;
+.step {
+  background: #fff;
   border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex: 1 1 250px;
+  max-width: 280px;
+  transition: transform 0.25s ease;
 }
 
-.intro p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin-bottom: 1.8rem;
+.step:hover {
+  transform: translateY(-5px);
 }
 
-.small {
-  font-size: 1rem;
-  opacity: 0.8;
-  line-height: 1.6;
-}
-
-/* Tlačítko */
-button {
-  background: #ffcc00;
-  border: none;
-  padding: 1rem 2.3rem;
-  font-size: 1.05rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-button:hover {
-  background: #ffdb4d;
-  transform: scale(1.04);
-}
-
-/* Patička */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #fff7d6;
-  font-size: 0.9rem;
-  color: #555;
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.03);
-}
-
-/* Logo */
-.logo {
-  width: 60px;
-  height: 60px;
+.icon {
+  font-size: 2rem;
   margin-bottom: 0.8rem;
-  transition: transform 0.3s ease;
 }
 
-.logo:hover {
-  transform: rotate(-5deg) scale(1.05);
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
-/* Responsivní úpravy */
-@media (max-width: 600px) {
-  .intro {
-    margin: 2rem 1rem;
-    padding: 1.5rem;
+.step p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+@media (max-width: 700px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  .intro p {
-    font-size: 1.05rem;
-  }
-
-  button {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
+  .step {
+    max-width: 320px;
   }
 }
