@@ -13,27 +13,32 @@ body {
   min-height: 100vh;
 }
 
-/* HEADER */
+/* === HEADER === */
 header {
   text-align: center;
   background: #222;
   color: #fff;
   padding: 4rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ✅ horizontální střed */
+  justify-content: center; /* ✅ vertikální střed */
+  position: relative;
 }
 
-/* === LOGO (mince) === */
+/* === LOGO – mince === */
 .logo {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 0.75rem;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1rem;
   display: block;
   object-fit: contain;
+  image-rendering: crisp-edges;
 
-  background: transparent; /* odstraněno bílé pozadí */
-  border-radius: 50%;
-  box-shadow: none;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35)); /* tmavý stín pod mincí */
-  image-rendering: -webkit-optimize-contrast; /* ostřejší v Safari */
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  border: none;
 }
 
 h1 {
@@ -46,7 +51,7 @@ h1 {
   font-size: 1.1rem;
 }
 
-/* MAIN */
+/* === MAIN === */
 main {
   flex: 1;
   text-align: center;
@@ -107,7 +112,7 @@ main {
   line-height: 1.5;
 }
 
-/* BUTTONS */
+/* === BUTTONS === */
 .btn {
   display: inline-block;
   background: #ffd600;
@@ -142,7 +147,7 @@ main {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* STEPS */
+/* === STEPS === */
 .steps {
   max-width: 800px;
   margin: 0 auto 3rem;
@@ -168,7 +173,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* FOOTER */
+/* === FOOTER === */
 footer {
   background: #222;
   color: #fff;
@@ -183,7 +188,7 @@ footer .legal {
   line-height: 1.5;
 }
 
-/* MODAL */
+/* === MODAL === */
 .modal {
   position: fixed;
   inset: 0;
@@ -224,7 +229,7 @@ footer .legal {
   cursor: pointer;
 }
 
-/* RESPONSIVE */
+/* === RESPONSIVE === */
 @media (max-width: 600px) {
   .btn.large {
     width: 90%;
@@ -236,7 +241,7 @@ footer .legal {
   }
 
   .logo {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
 }
