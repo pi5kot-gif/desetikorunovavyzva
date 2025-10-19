@@ -21,14 +21,19 @@ header {
   padding: 4rem 1rem 2rem;
 }
 
+/* === LOGO (mince) === */
 .logo {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1rem;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 0.75rem;
+  display: block;
   object-fit: contain;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  background: transparent; /* odstraněno bílé pozadí */
+  border-radius: 50%;
+  box-shadow: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35)); /* tmavý stín pod mincí */
+  image-rendering: -webkit-optimize-contrast; /* ostřejší v Safari */
 }
 
 h1 {
@@ -55,7 +60,7 @@ main {
   line-height: 1.7;
 }
 
-/* QR SEKCE */
+/* === QR SEKCE === */
 .donate {
   text-align: center;
   padding: 3rem 1rem;
@@ -72,7 +77,7 @@ main {
 }
 
 .donate-desc {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.6;
 }
 
@@ -80,18 +85,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin: 2.5rem auto;
+  width: 100%;
+  text-align: center;
 }
 
 .qr {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin: 0 auto;
   border: none;
   outline: none;
-  display: block;
   background: #fff;
-  margin: 0 auto;
-  box-shadow: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
 }
 
 .account {
@@ -225,5 +233,10 @@ footer .legal {
   .qr {
     width: 180px;
     height: 180px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
   }
 }
