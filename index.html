@@ -17,83 +17,72 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body style="background:#F7F7F7; color:#222;">
-  <header style="background:#222; color:white; padding:4rem 1rem 2.5rem; text-align:center;">
-    <img src="assets/logo.svg" alt="Logo Desetikorunová výzva" class="logo" style="width:100px; height:100px; margin-bottom:1rem;" />
-    <h1 style="font-size:2.2rem; margin-bottom:0.5rem; color:#FFD600;">Desetikorunová výzva</h1>
-    <p class="subtitle" style="font-size:1.1rem; opacity:0.9;">Jeden malý dar. Obrovský dopad 💛</p>
+<body>
+  <header>
+    <img src="assets/logo.svg" alt="Logo Desetikorunová výzva" class="logo" />
+    <h1>Desetikorunová výzva</h1>
+    <p class="subtitle">Jeden malý dar. Obrovský dopad 💛</p>
   </header>
 
   <main>
-    <section class="intro" style="max-width:800px; margin:3rem auto; text-align:center;">
-      <p style="font-size:1.15rem; line-height:1.7; margin-bottom:1.5rem;">
+    <section class="intro">
+      <p>
         Každý den utratíme 10&nbsp;Kč bez přemýšlení.  
         Ale co kdyby tentokrát těch deset korun změnilo něco skutečného?
       </p>
 
-      <p style="font-size:1.15rem; line-height:1.7; margin-bottom:1.5rem;">
+      <p>
         <strong>Desetikorunová výzva</strong> chce oslovit <strong>5&nbsp;milionů lidí</strong>.  
         Když každý pošle jen deset korun, vznikne síla, která dokáže pomoct tam, kde je to opravdu potřeba.
       </p>
 
-      <p style="font-size:1.15rem; line-height:1.7; color:#333;">
+      <p>
         Každý dar bude veden na <strong>transparentním účtu Fio banky</strong>,  
         aby každý viděl, kam peníze jdou.  
         Tento projekt nepřijímá platby za služby ani produkty – jde výhradně o dobrovolné dary.
       </p>
     </section>
 
-    <section class="donate" style="background:white; padding:2rem; border-radius:16px; max-width:600px; margin:0 auto 3rem; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <h2 style="font-size:1.8rem; margin-bottom:1rem;">Pošli dobrovolný dar 10 Kč</h2>
-      <p style="font-size:1.1rem; margin-bottom:1rem;">
+    <section class="donate">
+      <h2>Pošli dobrovolný dar 10 Kč</h2>
+      <p>
         Stačí naskenovat QR kód nebo odeslat dar ručně.<br>
         Každá částka pomáhá – děkujeme! 💛
       </p>
 
-      <img src="assets/qr_placeholder.png" alt="QR platba 10 Kč" class="qr" id="qrImage" style="width:200px; height:200px; margin:1rem 0; cursor:pointer;" />
+      <img src="assets/qr_placeholder.png" alt="QR platba 10 Kč" class="qr" id="qrImage" />
 
-      <div class="account" style="font-size:0.95rem; text-align:center; line-height:1.4;">
+      <div class="account">
         <p><strong>Název účtu:</strong> Desetikorunová výzva – M.P.</p>
         <p><strong>Číslo účtu:</strong> 2803344316/2010 (Fio banka)</p>
         <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
       </div>
 
-      <a href="https://ib.fio.cz/ib/transparent?a=2803344316" target="_blank"
-         style="display:inline-block;margin-top:1.5rem;padding:0.9rem 2rem;background:#FFD600;color:#222;
-         border-radius:50px;font-weight:600;text-decoration:none;font-size:1rem;transition:0.3s;">
+      <a href="https://ib.fio.cz/ib/transparent?a=2803344316" target="_blank" class="btn">
         Zobrazit transparentní účet
       </a>
     </section>
 
-    <section class="steps" style="max-width:800px; margin:0 auto 3rem;">
-      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Jak to bude fungovat</h2>
+    <section class="steps">
+      <h2>Jak to bude fungovat</h2>
 
-      <button class="big-donate-step" id="donateStep"
-              style="display:block;width:100%;max-width:600px;margin:1.5rem auto;padding:2rem;
-              border:none;border-radius:16px;background:#FFD600;cursor:pointer;
-              box-shadow:0 2px 10px rgba(0,0,0,0.05);transition:0.3s;">
-        <div class="icon" style="font-size:2rem;margin-bottom:0.5rem;">💛</div>
-        <h3 style="font-size:1.5rem;margin-bottom:0.5rem;">1. Pošli dar 10 Kč</h3>
-        <p style="font-size:1.1rem;color:#222;">Klikni sem a otevři QR kód pro dar. Symbolický dar, který může změnit svět.</p>
+      <button class="btn large" id="donateStep">
+        <div class="icon">💛</div>
+        <h3>1. Pošli dar 10 Kč</h3>
+        <p>Klikni sem a otevři QR kód pro dar. Symbolický dar, který může změnit svět.</p>
       </button>
 
-      <div class="step share-step" id="shareStep"
-           style="position:relative;display:block;width:100%;max-width:600px;margin:1.5rem auto;padding:2rem;
-           border-radius:16px;background:#FFF;color:#222;box-shadow:0 2px 10px rgba(0,0,0,0.05);transition:0.3s;">
-        <button class="share-overlay" id="shareButton" style="position:absolute;inset:0;background:transparent;border:none;cursor:pointer;"></button>
-        <div class="icon" style="font-size:2rem;margin-bottom:0.5rem;">📣</div>
-        <h3 style="font-size:1.5rem;margin-bottom:0.5rem;">2. Sdílej výzvu</h3>
-        <p style="font-size:1.1rem;">Klikni kamkoliv sem a pošli dál odkaz na výzvu. Každé sdílení pomáhá 💛</p>
+      <div class="step" id="shareStep">
+        <button class="share-overlay" id="shareButton"></button>
+        <div class="icon">📣</div>
+        <h3>2. Sdílej výzvu</h3>
+        <p>Klikni kamkoliv sem a pošli dál odkaz na výzvu. Každé sdílení pomáhá 💛</p>
       </div>
 
-      <a href="https://www.youtube.com/" target="_blank"
-         class="step impact-step"
-         style="display:block;width:100%;max-width:600px;margin:1.5rem auto;padding:2rem;
-         border-radius:16px;background:#E8F5FF;color:#222;text-decoration:none;
-         box-shadow:0 2px 10px rgba(0,0,0,0.05);transition:0.3s;">
-        <div class="icon" style="font-size:2rem;margin-bottom:0.5rem;">🌍</div>
-        <h3 style="font-size:1.5rem;margin-bottom:0.5rem;">3. Sleduj dopad</h3>
-        <p style="font-size:1.1rem;line-height:1.6;">
+      <a href="https://www.youtube.com/" target="_blank" class="step link">
+        <div class="icon">🌍</div>
+        <h3>3. Sleduj dopad</h3>
+        <p>
           Cílíme na pět milionů malých darů – a každý z nich se zapíše do jednoho příběhu.  
           Jakmile výzva dosáhne svého cíle, otevřeme veřejný přehled, který ukáže, kam peníze skutečně doputovaly.  
           <br><br>
@@ -103,21 +92,20 @@
     </section>
   </main>
 
-  <footer style="background:#222; color:white; text-align:center; padding:2rem 1rem; font-size:0.9rem;">
+  <footer>
     <p>© 2025 Desetikorunová výzva – M.P.</p>
-    <p style="font-size:12px;color:#AAA;margin-top:20px;line-height:1.6;">
+    <p class="legal">
       Desetikorunová výzva je dobrovolná iniciativa.  
       Nejedná se o veřejnou sbírku dle zákona č. 117/2001 Sb.<br>
       Veškeré příspěvky jsou zasílány dobrovolně na transparentní účet a jejich využití bude zveřejněno.
     </p>
   </footer>
 
-  <!-- === MODÁLNÍ OKNO QR === -->
-  <div class="modal" id="qrModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:999;">
-    <div class="modal-content" style="background:white;border-radius:12px;padding:2rem;max-width:400px;text-align:center;position:relative;">
-      <span class="close" id="closeModal" style="position:absolute;top:10px;right:15px;font-size:1.5rem;cursor:pointer;">&times;</span>
-      <h2 style="font-size:1.4rem;margin-bottom:1rem;">Naskenuj QR kód v mobilní aplikaci své banky</h2>
-      <img src="assets/qr_placeholder.png" alt="QR kód pro dar 10 Kč" class="modal-qr" style="width:250px;height:250px;margin-bottom:1rem;" />
+  <div class="modal" id="qrModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Naskenuj QR kód v mobilní aplikaci své banky</h2>
+      <img src="assets/qr_placeholder.png" alt="QR kód pro dar 10 Kč" class="modal-qr" />
       <p><strong>Číslo účtu:</strong> 2803344316/2010 (Fio banka)</p>
       <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
     </div>
