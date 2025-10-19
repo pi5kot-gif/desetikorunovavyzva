@@ -28,7 +28,7 @@ header {
 }
 
 .logo {
-  width: clamp(100px, 25vw, 160px); /* 🧭 mění se podle šířky displeje */
+  width: clamp(100px, 25vw, 160px);
   height: auto;
   margin: 0 auto 1rem;
   display: block;
@@ -94,7 +94,7 @@ main {
 }
 
 .qr {
-  width: clamp(160px, 40vw, 220px); /* ✅ přizpůsobí se velikosti displeje */
+  width: clamp(160px, 40vw, 220px);
   height: auto;
   border: none;
   outline: none;
@@ -167,6 +167,48 @@ main {
 .icon {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+}
+
+/* === PROGRESS SEKCE === */
+.progress-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #fff7cc;
+  border-top: 2px solid #ffd600;
+  border-bottom: 2px solid #ffd600;
+}
+
+.progress-section h2 {
+  color: #222;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 0.5rem;
+}
+
+.progress-section p {
+  margin-bottom: 1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 50px;
+  height: 20px;
+  width: 80%;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: #ffd600;
+  height: 100%;
+  width: 0%;
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+.progress-stats {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #333;
 }
 
 /* === FOOTER === */
