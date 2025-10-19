@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* === HEADER === */
+/* HEADER */
 header {
   text-align: center;
   background: #222;
@@ -37,7 +37,7 @@ h1 {
   font-size: 1.1rem;
 }
 
-/* === MAIN === */
+/* MAIN */
 main {
   flex: 1;
   text-align: center;
@@ -51,11 +51,10 @@ main {
   line-height: 1.7;
 }
 
-/* === QR SEKCE === */
+/* QR SEKCE */
 .donate {
   background: transparent;
   border: none;
-  outline: none;
   margin: 0 auto 3rem;
   padding: 0;
 }
@@ -66,37 +65,49 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donate-box h2 {
+  margin-bottom: 1rem;
+}
+
+.donate-desc {
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .qr-wrapper {
-  background: #fff; /* ✅ neutralizuje Safari outline */
+  background: #fff;
+  padding: 0;             /* zruš padding pro rovné mezery */
   border-radius: 12px;
-  display: inline-block;
-  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;         /* stejná mezera nahoře i dole */
 }
 
 .qr {
-  display: block;
   width: 200px;
   height: 200px;
-  margin: 0 auto;
   border: none;
   outline: none;
-  box-shadow: none;
+  display: block;
   background: #fff;
+  box-shadow: none;
 }
 
 .account {
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-top: 1.5rem;
 }
 
-/* === BUTTONS === */
+/* BUTTONS */
 .btn {
-  display: inline-block;
   background: #ffd600;
   color: #222;
   font-weight: 600;
@@ -118,7 +129,6 @@ main {
   border-radius: 20px;
   background: #ffd600;
   color: #222;
-  font-weight: 600;
   text-align: center;
   margin: 1.2rem auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -130,7 +140,7 @@ main {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* === STEPS === */
+/* STEPS */
 .steps {
   max-width: 800px;
   margin: 0 auto 3rem;
@@ -156,7 +166,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* === FOOTER === */
+/* FOOTER */
 footer {
   background: #222;
   color: #fff;
@@ -171,7 +181,7 @@ footer .legal {
   line-height: 1.5;
 }
 
-/* === MODAL === */
+/* MODAL */
 .modal {
   position: fixed;
   inset: 0;
@@ -212,9 +222,14 @@ footer .legal {
   cursor: pointer;
 }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .btn.large {
     width: 90%;
+  }
+
+  .qr {
+    width: 180px;
+    height: 180px;
   }
 }
