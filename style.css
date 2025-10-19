@@ -142,6 +142,10 @@ main {
   margin: 0 auto 3rem;
 }
 
+.steps .step {
+  margin: 1.2rem auto; /* ✅ sjednoceno s Výzvou roste */
+}
+
 .steps h2 {
   font-size: clamp(1.5rem, 3vw, 1.8rem);
   margin-bottom: 1.5rem;
@@ -168,7 +172,7 @@ main {
   color: #222;
   border-radius: 20px;
   max-width: 600px;
-  margin: 1.2rem auto; /* stejné rozestupy jako kroky */
+  margin: 1.2rem auto; /* ✅ přesně stejná mezera jako kroky */
   padding: clamp(1.2rem, 3vw, 2rem);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
