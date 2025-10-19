@@ -139,11 +139,11 @@ main {
 /* === STEPS === */
 .steps {
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto; /* ✅ sjednoceno — žádná přebytečná mezera dole */
 }
 
 .steps .step {
-  margin: 1.2rem auto; /* ✅ sjednoceno s Výzvou roste */
+  margin: 1.2rem auto; /* ✅ stejné rozestupy mezi všemi kroky */
 }
 
 .steps h2 {
@@ -172,7 +172,7 @@ main {
   color: #222;
   border-radius: 20px;
   max-width: 600px;
-  margin: 1.2rem auto; /* ✅ přesně stejná mezera jako kroky */
+  margin: 1.2rem auto; /* ✅ stejná mezera jako kroky */
   padding: clamp(1.2rem, 3vw, 2rem);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
