@@ -141,12 +141,10 @@
     const CIL = 50000000; // 50 milionů Kč
     const API = "https://web-production-bc62e.up.railway.app/fio";
 
-
-
     try {
       const res = await fetch(API);
       const data = await res.json();
-      const balance = data.accountStatement.info.closingBalance || 0;
+      const balance = parseFloat(data.balance || 0);
       const percent = Math.min(((balance / CIL) * 100).toFixed(2), 100);
 
       document.getElementById("progress-text").innerHTML =
@@ -158,7 +156,9 @@
     }
   }
 
+  // 🔁 automatické aktualizace každých 60 sekund
   updateProgress();
+  setInterval(updateProgress, 60000);
   </script>
 </body>
 </html>
