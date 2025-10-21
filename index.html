@@ -14,10 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pi5kot-gif.github.io/desetikorunovavyzva/" />
 
-  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.png?v=2" type="image/png" />
-
-  <!-- Styl -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -31,6 +28,7 @@
 
   <!-- MAIN -->
   <main>
+    <!-- ÚVOD -->
     <section class="intro">
       <p>
         Každý den utratíme 10 Kč bez přemýšlení.  
@@ -105,10 +103,12 @@
     <section class="progress-section">
       <h2>💛 Výzva roste</h2>
       <p>Společně tvoříme sílu, která dokáže pomáhat.</p>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: 0%;"></div>
+
+      <div class="progress-bar" style="width:100%;background:#fff;border-radius:10px;height:10px;overflow:hidden;">
+        <div id="progress-fill" class="progress-fill" style="height:10px;background:#222;width:0%;transition:width 1s;"></div>
       </div>
-      <p class="progress-stats">Vybráno: <strong>0 Kč</strong> z <strong>50 000 000 Kč</strong> (0 %)</p>
+
+      <p id="progress-text" class="progress-stats">Načítám data...</p>
     </section>
   </main>
 
@@ -134,5 +134,29 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- 📊 SCRIPT pro načtení dat z Fio API -->
+  <script>
+  async function updateProgress() {
+    const CIL = 50000000; // 50 milionů Kč
+    const API = "https://www.fio.cz/ib_api/rest/by-id/2803344316.json";
+
+    try {
+      const res = await fetch(API);
+      const data = await res.json();
+      const balance = data.accountStatement.info.closingBalance || 0;
+      const percent = Math.min(((balance / CIL) * 100).toFixed(2), 100);
+
+      document.getElementById("progress-text").innerHTML =
+        `Vybráno: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong> z <strong>${CIL.toLocaleString("cs-CZ")} Kč</strong> (${percent} %)`;
+      document.getElementById("progress-fill").style.width = percent + "%";
+    } catch (e) {
+      console.error("Nepodařilo se načíst data z Fio API:", e);
+      document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
+    }
+  }
+
+  updateProgress();
+  </script>
 </body>
 </html>
