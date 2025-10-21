@@ -139,7 +139,8 @@
   <script>
   async function updateProgress() {
     const CIL = 50000000; // 50 milionů Kč
-    const API = "https://www.fio.cz/ib_api/rest/by-id/2803344316.json";
+    const API = "https://web-production-bc62e.up.railway.app/fio";
+
 
     try {
       const res = await fetch(API);
