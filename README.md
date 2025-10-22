@@ -1,9 +1,23 @@
 # 💛 Desetikorunová výzva
 
-Myšlenka: oslovit 10 milionů lidí, každý přispěje 10 Kč → společně velký dopad.
+**Jednoduchý nápad s obrovským dopadem.**  
+Cíl: oslovit 10 milionů lidí, z nichž každý přispěje **10 Kč** → společně vytvořit skutečnou změnu.
 
+---
+
+### 🌍 O projektu
 Tento projekt je zatím v **lokální fázi vývoje**.  
-Brzy bude doplněn o veřejný web, napojení na darovací systém a sociální sdílení.
+Brzy bude doplněn o:
+- veřejný web s informacemi o výzvě,  
+- napojení na transparentní účet,  
+- systém pro sdílení a sledování dopadu.
 
-## Lokální spuštění
-Otevři `index.html` v prohlížeči.
+---
+
+### 🧩 Lokální spuštění
+Stačí otevřít soubor **`index.html`** v prohlížeči.  
+Není potřeba žádná instalace ani server.
+
+---
+
+© 2025 Desetikorunová výzva – M.P.
