@@ -16,6 +16,22 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.desetikorunovavyzva.cz/" />
 
+  <!-- ✅ Strukturovaná data (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Desetikorunová výzva",
+    "url": "https://www.desetikorunovavyzva.cz",
+    "logo": "https://www.desetikorunovavyzva.cz/assets/logo.webp",
+    "description": "Desetikorunová výzva – 5 milionů lidí, každý pošle 10 Kč. Každá koruna se počítá 💛",
+    "sameAs": [
+      "https://www.facebook.com/desetikorunovavyzva",
+      "https://www.instagram.com/desetikorunovavyzva"
+    ]
+  }
+  </script>
+
   <!-- ✅ Favicons -->
   <link rel="icon" href="assets/favicon.webp" type="image/webp" />
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32" />
@@ -48,23 +64,16 @@
 
   <!-- MAIN -->
   <main>
-    <!-- ÚVOD -->
     <section class="intro">
-      <p>
-        Každý den utratíme 10 Kč bez přemýšlení.  
-        Ale co kdyby tentokrát těch deset korun změnilo něco skutečného?
-      </p>
+      <p>Každý den utratíme 10 Kč bez přemýšlení.  
+      Ale co kdyby tentokrát těch deset korun změnilo něco skutečného?</p>
 
-      <p>
-        <strong>Desetikorunová výzva</strong> chce oslovit <strong>5 milionů lidí</strong>.  
-        Když každý pošle jen deset korun, vznikne síla, která dokáže pomoct tam, kde je to opravdu potřeba.
-      </p>
+      <p><strong>Desetikorunová výzva</strong> chce oslovit <strong>5 milionů lidí</strong>.  
+      Když každý pošle jen deset korun, vznikne síla, která dokáže pomoct tam, kde je to opravdu potřeba.</p>
 
-      <p>
-        Každý dar bude veden na <strong>transparentním účtu Fio banky</strong>,  
-        aby každý viděl, kam peníze jdou.  
-        Tento projekt nepřijímá platby za služby ani produkty – jde výhradně o dobrovolné dary.
-      </p>
+      <p>Každý dar bude veden na <strong>transparentním účtu Fio banky</strong>,  
+      aby každý viděl, kam peníze jdou.  
+      Tento projekt nepřijímá platby za služby ani produkty – jde výhradně o dobrovolné dary.</p>
     </section>
 
     <!-- QR SEKCE -->
@@ -135,7 +144,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Desetikorunová výzva – M.P.</p>
     <p class="legal">
@@ -145,7 +153,6 @@
     </p>
   </footer>
 
-  <!-- MODAL -->
   <div class="modal" id="qrModal">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
@@ -161,10 +168,9 @@
 
   <script src="script.js"></script>
 
-  <!-- 📊 SCRIPT pro načtení dat z Fio API -->
   <script>
   async function updateProgress() {
-    const CIL = 50000000; // 50 milionů Kč
+    const CIL = 50000000;
     const API = "https://web-production-bc62e.up.railway.app/fio";
 
     try {
