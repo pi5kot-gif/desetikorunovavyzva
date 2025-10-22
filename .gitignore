@@ -1,4 +1,31 @@
+# macOS systémové soubory
 .DS_Store
-node_modules
-.env
+.AppleDouble
+.LSOverride
 
+# Node.js a závislosti (pro jistotu, pokud bys někdy používal npm)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Prostředí a konfigurace
+.env
+.env.local
+.env.*.local
+
+# Build a cache
+dist/
+build/
+.cache/
+.tmp/
+
+# VSCode / Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+
+# GitHub Pages deployment cache
+_publish/
+_pages/
