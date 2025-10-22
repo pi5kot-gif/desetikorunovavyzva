@@ -7,13 +7,17 @@
   <title>Sleduj dopad – Desetikorunová výzva 💛</title>
 
   <meta name="description" content="Informace o tom, kam budou prostředky z Desetikorunové výzvy směřovány.">
-  <link rel="icon" href="assets/favicon.png?v=2" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.webp?v=2" type="image/webp" />
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 
 <body>
   <header>
-    <img src="assets/logo.png" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" />
+    <picture>
+      <source srcset="assets/logo.webp" type="image/webp">
+      <img src="assets/logo.png" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" width="300" height="300" loading="lazy" />
+    </picture>
     <h1>Sleduj dopad</h1>
     <p class="subtitle">Kam výzva směřuje a jak pomůže 💛</p>
   </header>
