@@ -1,0 +1,17 @@
+{
+  "name": "Desetikorunová výzva",
+  "short_name": "10 Kč výzva",
+  "description": "5 milionů lidí × 10 Kč = velká změna. Každá koruna se počítá 💛",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffd600",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
