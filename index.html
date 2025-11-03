@@ -133,10 +133,6 @@
       <h2>💛 Výzva roste</h2>
       <p>Společně ukazujeme, že i malá částka může nést velkou myšlenku.</p>
 
-      <div class="progress-bar" style="width:100%;background:#fff;border-radius:10px;height:10px;overflow:hidden;">
-        <div id="progress-fill" class="progress-fill" style="height:10px;background:#222;width:0%;transition:width 1s;"></div>
-      </div>
-
       <p id="progress-text" class="progress-stats">Načítám data...</p>
     </section>
   </main>
@@ -167,18 +163,15 @@
 
   <script>
   async function updateProgress() {
-    const CIL = 50000000;
     const API = "https://web-production-bc62e.up.railway.app/fio";
 
     try {
       const res = await fetch(API);
       const data = await res.json();
       const balance = parseFloat(data.balance || 0);
-      const percent = Math.min(((balance / CIL) * 100).toFixed(2), 100);
 
       document.getElementById("progress-text").innerHTML =
-        `Na účtu: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong> z <strong>${CIL.toLocaleString("cs-CZ")} Kč</strong> (${percent} %)`;
-      document.getElementById("progress-fill").style.width = percent + "%";
+        `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
     } catch (e) {
       console.error("Nepodařilo se načíst data z Fio API:", e);
       document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
