@@ -242,22 +242,17 @@
 
   <script>
   async function updateProgress() {
-    // 💡 Použij nový endpoint Fio API – vlož si svůj token místo MOJEAPI
-    const API = "https://fioapi.fio.cz/v1/rest/last/0SHMGcGMLTYxiW2ICCviFV0RP5u0eE9aQOTUQiMA5ifs2PUhjpKRWcsbHHwSdTIj/transactions.json";
+    const API = "https://web-production-bc62e.up.railway.app/fio"; // ✅ tvoje proxy na Railway
 
     try {
       const res = await fetch(API);
       const data = await res.json();
 
-      let balance = 0;
-      if (data && data.accountStatement && data.accountStatement.info) {
-        balance = parseFloat(data.accountStatement.info.closingBalance || 0);
-      }
-
+      const balance = parseFloat(data.balance || 0);
       document.getElementById("progress-text").innerHTML =
         `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
     } catch (e) {
-      console.error("❌ Chyba při načítání Fio API:", e);
+      console.error("❌ Chyba při načítání dat:", e);
       document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
     }
   }
