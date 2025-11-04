@@ -47,6 +47,47 @@
     gtag('js', new Date());
     gtag('config', 'G-ZQ8ZVSB7T3');
   </script>
+
+  <style>
+    /* ✨ Jemný "pulse" efekt pro žlutý box */
+    @keyframes pulseIn {
+      0% { transform: scale(0.97); opacity: 0; }
+      60% { transform: scale(1.02); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .yellow-box {
+      background: #fff7c2;
+      border: 2px solid #ffd600;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: default;
+      animation: pulseIn 1.5s ease-out;
+      transition: transform 0.3s ease;
+    }
+
+    .yellow-box:hover {
+      transform: scale(1.01);
+    }
+
+    .yellow-box .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .yellow-box h3 {
+      margin: 0.3rem 0 0.7rem 0;
+      color: #222;
+    }
+
+    .yellow-box p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #333;
+    }
+  </style>
 </head>
 
 <body>
@@ -104,12 +145,17 @@
     <section class="steps">
       <h2>Jak to funguje</h2>
 
+      <!-- ✅ NOVÝ BLOK – bez klikání -->
       <div class="step">
-        <button class="btn large" id="donateStep">
+        <div class="btn large yellow-box">
           <div class="icon">💛</div>
-          <h3>1. Přidej se</h3>
-          <p>Klikni a otevři QR kód. Symbolický krok, který může inspirovat další.</p>
-        </button>
+          <h3>Proč jít do výzvy!</h3>
+          <p>
+            Je to jen deset korun.<br>
+            Ale může ukázat, že ti není jedno, co se kolem děje.<br>
+            Přidej se – právě takhle začínají velké věci.
+          </p>
+        </div>
       </div>
 
       <div class="step">
@@ -145,19 +191,6 @@
       Cílem je inspirovat ostatní k myšlence, že i malá částka může mít velký význam. 💛
     </p>
   </footer>
-
-  <div class="modal" id="qrModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Naskenuj QR kód v mobilní aplikaci své banky</h2>
-      <picture>
-        <source srcset="assets/qr.webp" type="image/webp">
-        <img src="assets/qr.webp" alt="QR kód pro příspěvek" class="modal-qr" width="250" height="250" loading="lazy" />
-      </picture>
-      <p><strong>Číslo účtu:</strong> 2803344316/2010 (Fio banka)</p>
-      <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 
