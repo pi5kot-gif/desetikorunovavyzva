@@ -16,7 +16,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.desetikorunovavyzva.cz/" />
 
-  <!-- ✅ Strukturovaná data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,25 +30,13 @@
   <link rel="icon" type="image/png" href="assets/favicon.png?v=5">
   <link rel="apple-touch-icon" href="assets/favicon.png?v=5">
   <link rel="shortcut icon" href="assets/favicon.png?v=5">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="theme-color" content="#ffd600">
-
   <link rel="manifest" href="manifest.webmanifest">
 
   <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-  <!-- 📊 Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ8ZVSB7T3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZQ8ZVSB7T3');
-  </script>
-
   <style>
-    /* ✨ Jemný "pulse" efekt pro žlutý box */
     @keyframes pulseIn {
       0% { transform: scale(0.97); opacity: 0; }
       60% { transform: scale(1.02); opacity: 1; }
@@ -99,7 +86,6 @@
       transition: transform 0.2s ease;
     }
 
-    /* 🟡 MODÁLNÍ OKNO – centrované QR */
     .modal {
       display: none;
       position: fixed;
@@ -267,21 +253,19 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-
   <script>
   async function updateProgress() {
-    const API = "https://web-production-bc62e.up.railway.app/fio";
+    const API = "https://fioapi.fio.cz/v1/rest/last/0SHMGcGMLTYxiW2ICCviFV0RP5u0eE9aQOTUQiMA5ifs2PUhjpKRWcsbHHwSdTIj/transactions.json";
 
     try {
       const res = await fetch(API);
       const data = await res.json();
-      const balance = parseFloat(data.balance || 0);
+      const balance = parseFloat(data.accountStatement.info.closingBalance || 0);
 
       document.getElementById("progress-text").innerHTML =
         `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
     } catch (e) {
-      console.error("Nepodařilo se načíst data z Fio API:", e);
+      console.error("Chyba při načítání dat z Fio API:", e);
       document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
     }
   }
@@ -289,7 +273,6 @@
   updateProgress();
   setInterval(updateProgress, 60000);
 
-  // ✅ Klikací QR modal
   const openQR = document.getElementById("openQR");
   const qrModal = document.getElementById("qrModal");
   const closeModal = document.getElementById("closeModal");
