@@ -271,6 +271,31 @@
         if (e.target === qrModal) qrModal.style.display = "none";
       });
     }
+
+    // 🔗 Funkční tlačítko Sdílej
+    const shareButton = document.getElementById("shareButton");
+
+    if (shareButton) {
+      shareButton.addEventListener("click", async () => {
+        const shareData = {
+          title: "Desetikorunová výzva 💛",
+          text: "Přidej se – i malá částka může mít velký význam.",
+          url: window.location.href
+        };
+
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else {
+            await navigator.clipboard.writeText(window.location.href);
+            alert("🔗 Odkaz na výzvu byl zkopírován do schránky 💛");
+          }
+        } catch (err) {
+          console.error("❌ Chyba při sdílení:", err);
+          alert("Nepodařilo se sdílet odkaz 😔");
+        }
+      });
+    }
   </script>
 </body>
 </html>
