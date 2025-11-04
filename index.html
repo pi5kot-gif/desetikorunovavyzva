@@ -54,19 +54,11 @@
       transition: transform 0.3s ease;
     }
 
-    .yellow-box:hover {
-      transform: scale(1.01);
-    }
+    .yellow-box:hover { transform: scale(1.01); }
 
-    .yellow-box .icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
+    .yellow-box .icon { font-size: 2rem; margin-bottom: 0.5rem; }
 
-    .yellow-box h3 {
-      margin: 0.3rem 0 0.7rem 0;
-      color: #222;
-    }
+    .yellow-box h3 { margin: 0.3rem 0 0.7rem 0; color: #222; }
 
     .yellow-box p {
       margin: 0;
@@ -81,10 +73,7 @@
       padding: 0;
       cursor: pointer;
     }
-    .qr-click:hover {
-      transform: scale(1.03);
-      transition: transform 0.2s ease;
-    }
+    .qr-click:hover { transform: scale(1.03); transition: transform 0.2s ease; }
 
     .modal {
       display: none;
@@ -124,9 +113,7 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .close:hover {
-      color: #000;
-    }
+    .close:hover { color: #000; }
 
     .modal-qr {
       margin: 1.5rem auto;
@@ -255,17 +242,22 @@
 
   <script>
   async function updateProgress() {
+    // 💡 Použij nový endpoint Fio API – vlož si svůj token místo MOJEAPI
     const API = "https://fioapi.fio.cz/v1/rest/last/0SHMGcGMLTYxiW2ICCviFV0RP5u0eE9aQOTUQiMA5ifs2PUhjpKRWcsbHHwSdTIj/transactions.json";
 
     try {
       const res = await fetch(API);
       const data = await res.json();
-      const balance = parseFloat(data.accountStatement.info.closingBalance || 0);
+
+      let balance = 0;
+      if (data && data.accountStatement && data.accountStatement.info) {
+        balance = parseFloat(data.accountStatement.info.closingBalance || 0);
+      }
 
       document.getElementById("progress-text").innerHTML =
         `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
     } catch (e) {
-      console.error("Chyba při načítání dat z Fio API:", e);
+      console.error("❌ Chyba při načítání Fio API:", e);
       document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
     }
   }
@@ -278,10 +270,8 @@
   const closeModal = document.getElementById("closeModal");
 
   if (openQR && qrModal && closeModal) {
-    openQR.addEventListener("click", () => {
-      qrModal.style.display = "flex";
-    });
-    closeModal.addEventListener("click", () => qrModal.style.display = "none");
+    openQR.addEventListener("click", () => (qrModal.style.display = "flex"));
+    closeModal.addEventListener("click", () => (qrModal.style.display = "none"));
     window.addEventListener("click", (e) => {
       if (e.target === qrModal) qrModal.style.display = "none";
     });
