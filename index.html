@@ -87,6 +87,17 @@
       line-height: 1.5;
       color: #333;
     }
+
+    .qr-click {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .qr-click:hover {
+      transform: scale(1.03);
+      transition: transform 0.2s ease;
+    }
   </style>
 </head>
 
@@ -120,10 +131,12 @@
       </p>
 
       <div class="qr-section">
-        <picture>
-          <source srcset="assets/qr.webp" type="image/webp">
-          <img src="assets/qr.webp" alt="QR platba 10 Kč" class="qr" id="qrImage" width="250" height="250" loading="lazy" />
-        </picture>
+        <button class="qr-click" id="openQR">
+          <picture>
+            <source srcset="assets/qr.webp" type="image/webp">
+            <img src="assets/qr.webp" alt="QR platba 10 Kč" class="qr" width="250" height="250" loading="lazy" />
+          </picture>
+        </button>
       </div>
 
       <p class="note">
@@ -145,7 +158,7 @@
     <section class="steps">
       <h2>Jak to funguje</h2>
 
-      <!-- ✅ NOVÝ BLOK – bez klikání -->
+      <!-- ✅ NOVÝ BLOK -->
       <div class="step">
         <div class="btn large yellow-box">
           <div class="icon">💛</div>
@@ -161,7 +174,7 @@
       <div class="step">
         <button class="btn large" id="shareButton">
           <div class="icon">📣</div>
-          <h3>2. Sdílej</h3>
+          <h3>Sdílej</h3>
           <p>Pošli dál odkaz na výzvu. Každé sdílení pomáhá šířit myšlenku dál 💛</p>
         </button>
       </div>
@@ -169,7 +182,7 @@
       <div class="step">
         <a href="dopad.html" class="btn large link">
           <div class="icon">🌍</div>
-          <h3>3. Sleduj dopad</h3>
+          <h3>Sleduj dopad</h3>
           <p>Sleduj, jak se projekt vyvíjí a kolik lidí se k myšlence přidává.</p>
         </a>
       </div>
@@ -178,7 +191,6 @@
     <section class="progress-section">
       <h2>💛 Výzva roste</h2>
       <p>Společně ukazujeme, že i malá částka může nést velkou myšlenku.</p>
-
       <p id="progress-text" class="progress-stats">Načítám data...</p>
     </section>
   </main>
@@ -191,6 +203,19 @@
       Cílem je inspirovat ostatní k myšlence, že i malá částka může mít velký význam. 💛
     </p>
   </footer>
+
+  <div class="modal" id="qrModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Naskenuj QR kód v mobilní aplikaci své banky</h2>
+      <picture>
+        <source srcset="assets/qr.webp" type="image/webp">
+        <img src="assets/qr.webp" alt="QR kód pro příspěvek" class="modal-qr" width="250" height="250" loading="lazy" />
+      </picture>
+      <p><strong>Číslo účtu:</strong> 2803344316/2010 (Fio banka)</p>
+      <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 
@@ -213,6 +238,19 @@
 
   updateProgress();
   setInterval(updateProgress, 60000);
+
+  // ✅ Klikací QR modal
+  const openQR = document.getElementById("openQR");
+  const qrModal = document.getElementById("qrModal");
+  const closeModal = document.getElementById("closeModal");
+
+  if (openQR && qrModal && closeModal) {
+    openQR.addEventListener("click", () => qrModal.style.display = "block");
+    closeModal.addEventListener("click", () => qrModal.style.display = "none");
+    window.addEventListener("click", (e) => {
+      if (e.target === qrModal) qrModal.style.display = "none";
+    });
+  }
   </script>
 </body>
 </html>
