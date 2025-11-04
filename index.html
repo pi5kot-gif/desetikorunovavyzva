@@ -241,36 +241,36 @@
   </div>
 
   <script>
-  async function updateProgress() {
-    const API = "const API = "https://web-production-e164.up.railway.app/fio"; // ✅ tvoje proxy na Railway
+    async function updateProgress() {
+      const API = "https://web-production-e164.up.railway.app/fio"; // ✅ tvoje proxy na Railway
 
-    try {
-      const res = await fetch(API);
-      const data = await res.json();
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
 
-      const balance = parseFloat(data.balance || 0);
-      document.getElementById("progress-text").innerHTML =
-        `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
-    } catch (e) {
-      console.error("❌ Chyba při načítání dat:", e);
-      document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
+        const balance = parseFloat(data.balance || 0);
+        document.getElementById("progress-text").innerHTML =
+          `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
+      } catch (e) {
+        console.error("❌ Chyba při načítání dat:", e);
+        document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
+      }
     }
-  }
 
-  updateProgress();
-  setInterval(updateProgress, 60000);
+    updateProgress();
+    setInterval(updateProgress, 60000);
 
-  const openQR = document.getElementById("openQR");
-  const qrModal = document.getElementById("qrModal");
-  const closeModal = document.getElementById("closeModal");
+    const openQR = document.getElementById("openQR");
+    const qrModal = document.getElementById("qrModal");
+    const closeModal = document.getElementById("closeModal");
 
-  if (openQR && qrModal && closeModal) {
-    openQR.addEventListener("click", () => (qrModal.style.display = "flex"));
-    closeModal.addEventListener("click", () => (qrModal.style.display = "none"));
-    window.addEventListener("click", (e) => {
-      if (e.target === qrModal) qrModal.style.display = "none";
-    });
-  }
+    if (openQR && qrModal && closeModal) {
+      openQR.addEventListener("click", () => (qrModal.style.display = "flex"));
+      closeModal.addEventListener("click", () => (qrModal.style.display = "none"));
+      window.addEventListener("click", (e) => {
+        if (e.target === qrModal) qrModal.style.display = "none";
+      });
+    }
   </script>
 </body>
 </html>
