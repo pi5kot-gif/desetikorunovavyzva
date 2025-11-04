@@ -98,6 +98,57 @@
       transform: scale(1.03);
       transition: transform 0.2s ease;
     }
+
+    /* 🟡 MODÁLNÍ OKNO – centrované QR */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+      animation: fadeInModal 0.4s ease;
+      max-width: 90%;
+      width: 360px;
+      margin: auto;
+    }
+
+    @keyframes fadeInModal {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      color: #555;
+      float: right;
+      font-size: 1.6rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+
+    .modal-qr {
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 
@@ -158,7 +209,6 @@
     <section class="steps">
       <h2>Jak to funguje</h2>
 
-      <!-- ✅ NOVÝ BLOK -->
       <div class="step">
         <div class="btn large yellow-box">
           <div class="icon">💛</div>
@@ -245,7 +295,9 @@
   const closeModal = document.getElementById("closeModal");
 
   if (openQR && qrModal && closeModal) {
-    openQR.addEventListener("click", () => qrModal.style.display = "block");
+    openQR.addEventListener("click", () => {
+      qrModal.style.display = "flex";
+    });
     closeModal.addEventListener("click", () => qrModal.style.display = "none");
     window.addEventListener("click", (e) => {
       if (e.target === qrModal) qrModal.style.display = "none";
