@@ -5,3 +5,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.desetikorunovavyzva.cz/sitemap.xml
+Favicon: https://www.desetikorunovavyzva.cz/favicon.ico?v=10
