@@ -6,20 +6,16 @@
   <base href="./" />
   <title>Sleduj dopad – Desetikorunová výzva 💛</title>
 
-  <meta name="description" content="Zjisti, jak dary z Desetikorunové výzvy pomáhají tam, kde jsou nejvíce potřeba. Každá koruna se počítá – sleduj skutečný dopad této výzvy.">
-  <meta name="keywords" content="Desetikorunová výzva, desetikorunova vyzva, výzva 10 Kč, sleduj dopad, dopad výzvy, solidarita, projekt, česká iniciativa, dobrovolný projekt, inspirace, komunita, rozvoj projektu, společná myšlenka, každá koruna se počítá, Fio banka, transparentní účet, česká výzva">
+  <meta name="description" content="Desetikorunová výzva ukazuje, že i malá částka může mít velký význam. Sleduj, jak projekt roste a inspiruje ostatní.">
+  <meta name="keywords" content="Desetikorunová výzva, desetikorunova vyzva, výzva 10 Kč, sleduj dopad, dopad výzvy, solidarita, projekt, česká iniciativa, dobrovolný projekt, inspirace, komunita, rozvoj projektu, společná myšlenka, každá koruna se počítá, český projekt, Fio banka, transparentní účet, česká výzva, pozitivní projekt, malý krok velká změna">
 
   <meta property="og:title" content="Sleduj dopad – Desetikorunová výzva 💛" />
-  <meta property="og:description" content="Zjisti, jak Desetikorunová výzva roste a inspiruje další. 💛" />
+  <meta property="og:description" content="Desetikorunová výzva ukazuje, že i malá částka může mít velký význam. Sleduj, jak projekt roste a inspiruje ostatní. 💛" />
   <meta property="og:image" content="assets/logo.webp" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.desetikorunovavyzva.cz/dopad.html" />
 
-  <link rel="preconnect" href="https://web-production-e164.up.railway.app" crossorigin>
-  <link rel="preload" as="image" href="assets/logo.webp">
-  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="style.css"></noscript>
-
+  <!-- ✅ Strukturovaná data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,66 +23,61 @@
     "name": "Desetikorunová výzva",
     "url": "https://www.desetikorunovavyzva.cz",
     "logo": "https://www.desetikorunovavyzva.cz/assets/logo.webp",
-    "description": "Desetikorunová výzva – iniciativa, která ukazuje, že i malý krok může mít velký význam 💛"
+    "description": "Desetikorunová výzva – 5 milionů lidí, každý pošle 10 Kč. Každá koruna má význam 💛"
   }
   </script>
 
+  <!-- ✅ Favicons -->
   <link rel="icon" type="image/png" href="assets/favicon.png?v=5">
   <link rel="apple-touch-icon" href="assets/favicon.png?v=5">
   <link rel="shortcut icon" href="assets/favicon.png?v=5">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="theme-color" content="#ffd600">
 
+  <!-- ✅ Styl -->
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- 📊 Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ8ZVSB7T3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZQ8ZVSB7T3');
+  </script>
+
   <style>
-    /* Jemné načtení */
-    body {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity .6s ease;
-      background:#fff;
-      color:#222;
-      font-family: system-ui, sans-serif;
-      margin:0;
+    .impact-photo {
+      margin: 40px auto 10px;
+      text-align: center;
     }
-    body.loaded{visibility:visible;opacity:1;}
-    main,header,footer{animation:fadeIn .6s ease forwards;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
-    @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
-
-    header{text-align:center;padding:40px 20px;}
-    .logo{width:280px;height:auto;margin-bottom:10px;}
-    h1{font-size:2rem;margin:0;color:#222;}
-    .subtitle{color:#444;font-size:1.1rem;}
-
-    main{max-width:900px;margin:0 auto;padding:0 20px 60px;}
-    p{line-height:1.6;font-size:1.05rem;margin:1rem 0;}
-
-    .impact-photo{text-align:center;margin:40px auto 10px;}
-    .impact-photo img{
-      width:100%;
-      max-width:900px;
-      border-radius:14px;
-      box-shadow:0 4px 14px rgba(0,0,0,.08);
+    .impact-photo img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
-    .impact-note{
-      text-align:center;
-      color:#777;
-      font-size:.9rem;
-      margin-top:8px;
+    .impact-note {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      margin-top: 8px;
     }
 
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      background:#fff7c2;
-      color:#333;
-      font-size:.9rem;
-      border-top:2px solid #ffd600;
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 15px;
+      color: #fff;
+      background: #222;
     }
-    footer .legal{
-      margin-top:10px;
-      font-size:.85rem;
-      color:#555;
-      line-height:1.5;
+
+    footer .legal {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -95,7 +86,7 @@
   <header>
     <picture>
       <source srcset="assets/logo.webp" type="image/webp">
-      <img src="assets/logo.webp" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" loading="eager" decoding="async" fetchpriority="high">
+      <img src="assets/logo.webp" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" width="280" height="280" loading="lazy" style="max-width:100%;height:auto;" />
     </picture>
     <h1>Sleduj dopad</h1>
     <p class="subtitle">Jak se rozvíjí myšlenka výzvy 💛</p>
@@ -103,42 +94,45 @@
 
   <main>
     <section class="intro">
-      <p><strong>Každá koruna se počítá.</strong></p>
+      <p><strong>Každá desetikoruna má svou hodnotu.</strong></p>
 
       <p>
-        Dary z Desetikorunové výzvy zůstávají bezpečně na transparentním účtu, dokud nevznikne dostatečná částka na skutečnou pomoc.  
-        Na všem pečlivě pracuje tým lidí, který dohlíží na to, aby prostředky šly tam, kde budou mít největší smysl – přímo k lidí kteří je potřebují nejvíc.
+        Desetikorunová výzva vznikla z přesvědčení, že i malý finanční obnos může mít velký význam.  
+        Nejde o sbírku ani o instituci, ale o sdílenou výzvu, která spojuje lidi kolem jednoduché a pozitivní myšlenky.
       </p>
 
       <p>
-        Každý příspěvek je dobrovolný a představuje symbolickou účast na myšlence, že i malá částka může pohnout věci správným směrem.  
-        Sleduj dopad a to, kam se výzva posouvá – k projektům, které mají smysl a mění reálné příběhy.
+        Každý příspěvek je dobrovolný a představuje symbolické vyjádření účasti a víry v to, že i maličkost může něco změnit.  
+        Veškeré prostředky zůstávají na transparentním účtu Fio banky, kde jsou kdykoliv k nahlédnutí.
+      </p>
+
+      <p>
+        Slouží k rozvoji samotné výzvy – jejího obsahu, aktivit a dalších kroků, které posilují její smysl.  
+        Až nastane ten pravý čas, výzva se přirozeně promění v projekt – v duchu toho, proč vznikla: ukázat, že i malý krok může vést k něčemu skutečnému.
       </p>
 
       <div class="impact-photo">
         <picture>
           <source srcset="assets/donate.webp" type="image/webp">
-          <img src="assets/donate.webp" alt="Ilustrační fotografie Desetikorunové výzvy" loading="lazy" decoding="async" width="900" height="600">
+          <img src="assets/donate.webp" alt="Desetikorunová výzva – ilustrace budoucího směřování projektu" loading="lazy">
         </picture>
       </div>
 
       <p class="impact-note">
         Ilustrační fotografie – znázorňuje možný budoucí směr projektu, nikoli jeho současnou činnost.
       </p>
+
+      <a href="index.html" class="btn">Hlavní stránka</a>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Desetikorunová výzva – M.P.</p>
     <p class="legal">
-      Desetikorunová výzva je dobrovolná iniciativa, nikoli veřejná sbírka podle zákona č. 117/2001 Sb.<br>
+      Desetikorunová výzva je dobrovolná iniciativa, nikoli veřejná sbírka podle zákona č.&nbsp;117/2001&nbsp;Sb.<br>
       Příspěvky jsou dobrovolné a využívají se výhradně pro rozvoj projektu a jeho aktivit.<br>
       Cílem je inspirovat ostatní k myšlence, že i malá částka může mít velký význam. 💛
     </p>
   </footer>
-
-  <script>
-    window.addEventListener("load",()=>document.body.classList.add("loaded"));
-  </script>
 </body>
 </html>
