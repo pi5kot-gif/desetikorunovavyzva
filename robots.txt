@@ -1,3 +1,6 @@
+# Desetikorunová výzva – veřejná iniciativa 💛
+# Web: https://www.desetikorunovavyzva.cz
+
 User-agent: *
 Allow: /
 
