@@ -33,10 +33,36 @@
   <meta name="theme-color" content="#ffd600">
   <link rel="manifest" href="manifest.webmanifest">
 
+  <!-- 🖼️ Preload klíčových obrázků -->
+  <link rel="preload" as="image" href="assets/logo.webp">
+  <link rel="preload" as="image" href="assets/qr.webp">
+
+  <!-- 🧭 Preload a fallback pro CSS -->
   <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <style>
+    /* 🚀 Skrytí stránky do načtení */
+    body {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      background-color: #fff;
+    }
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* 🌟 Jemný fade-in obsahu */
+    main, header, footer {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .yellow-box {
       background: #fff7c2;
       border: 2px solid #ffd600;
@@ -50,15 +76,8 @@
     .yellow-box:hover { transform: scale(1.01); }
 
     .yellow-box .icon { font-size: 2rem; margin-bottom: 0.5rem; }
-
     .yellow-box h3 { margin: 0.3rem 0 0.7rem 0; color: #222; }
-
-    .yellow-box p {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.5;
-      color: #333;
-    }
+    .yellow-box p { margin: 0; font-size: 1.05rem; line-height: 1.5; color: #333; }
 
     .qr-click {
       background: none;
@@ -234,13 +253,17 @@
   </div>
 
   <script>
+    // 🌟 Po načtení obsahu zobrazí stránku
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
     async function updateProgress() {
       const API = "https://web-production-e164.up.railway.app/fio";
 
       try {
         const res = await fetch(API);
         const data = await res.json();
-
         const balance = parseFloat(data.balance || 0);
         document.getElementById("progress-text").innerHTML =
           `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
@@ -266,7 +289,6 @@
     }
 
     const shareButton = document.getElementById("shareButton");
-
     if (shareButton) {
       shareButton.addEventListener("click", async () => {
         const shareData = {
@@ -274,7 +296,6 @@
           text: "Přidej se – i malá částka může mít velký význam.",
           url: window.location.href
         };
-
         try {
           if (navigator.share) {
             await navigator.share(shareData);
