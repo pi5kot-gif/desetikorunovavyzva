@@ -34,8 +34,10 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="theme-color" content="#ffd600">
 
-  <!-- ✅ Styl -->
+  <!-- ✅ Preload stylu a klíčových obrázků -->
   <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" as="image" href="assets/logo.webp">
+  <link rel="preload" as="image" href="assets/donate.webp">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <!-- 📊 Google Analytics (GA4) -->
@@ -86,7 +88,15 @@
   <header>
     <picture>
       <source srcset="assets/logo.webp" type="image/webp">
-      <img src="assets/logo.webp" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" width="280" height="280" loading="lazy" style="max-width:100%;height:auto;" />
+      <img 
+        src="assets/logo.webp" 
+        alt="Logo 10 Kč – Desetikorunová výzva" 
+        class="logo" 
+        width="280" height="280" 
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        style="max-width:100%;height:auto;" />
     </picture>
     <h1>Sleduj dopad</h1>
     <p class="subtitle">Jak se rozvíjí myšlenka výzvy 💛</p>
@@ -114,7 +124,13 @@
       <div class="impact-photo">
         <picture>
           <source srcset="assets/donate.webp" type="image/webp">
-          <img src="assets/donate.webp" alt="Desetikorunová výzva – ilustrace budoucího směřování projektu" loading="lazy">
+          <img 
+            src="assets/donate.webp" 
+            alt="Desetikorunová výzva – ilustrace budoucího směřování projektu" 
+            width="900" height="600"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high">
         </picture>
       </div>
 
