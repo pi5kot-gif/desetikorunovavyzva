@@ -7,8 +7,6 @@
   <base href="./" />
   <title>Desetikorunová výzva 💛</title>
 
-  <link rel="preconnect" href="https://web-production-e164.up.railway.app" crossorigin>
-
   <meta name="description" content="Desetikorunová výzva – iniciativa, která ukazuje, že i malý krok může mít velký význam. Myšlenka, která spojuje.">
   <meta name="keywords" content="Desetikorunová výzva, desetikorunova vyzva, výzva 10 Kč, symbolický příspěvek, dobrovolná iniciativa, transparentní účet Fio, český projekt, komunita, solidarita, mikrodar, inspirace, pozitivní myšlenka, česká iniciativa, malý krok velká změna, transparentní projekt, Fio banka, dobrá myšlenka, český projekt podpory, 10kc výzva, český projekt, společná inspirace, česká výzva">
 
@@ -35,43 +33,87 @@
   <meta name="theme-color" content="#ffd600">
   <link rel="manifest" href="manifest.webmanifest">
 
-  <link rel="preload" as="image" href="assets/logo.webp">
-  <link rel="preload" as="image" href="assets/qr.webp">
-
   <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <style>
-    /* jemný fade pro QR modál */
+    .yellow-box {
+      background: #fff7c2;
+      border: 2px solid #ffd600;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+
+    .yellow-box:hover { transform: scale(1.01); }
+
+    .yellow-box .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .yellow-box h3 { margin: 0.3rem 0 0.7rem 0; color: #222; }
+
+    .yellow-box p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .qr-click {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .qr-click:hover { transform: scale(1.03); transition: transform 0.2s ease; }
+
     .modal {
-      display: flex;
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
       transition: opacity 0.3s ease;
     }
-    .modal.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
+
     .modal-content {
       background: #fff;
       padding: 2rem;
       border-radius: 14px;
       text-align: center;
       box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+      animation: fadeInModal 0.4s ease;
       max-width: 90%;
       width: 360px;
-      animation: fadeInModal 0.3s ease;
+      margin: auto;
     }
+
     @keyframes fadeInModal {
-      from { transform: scale(0.97); opacity: 0; }
+      from { transform: scale(0.95); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      color: #555;
+      float: right;
+      font-size: 1.6rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover { color: #000; }
+
+    .modal-qr {
+      margin: 1.5rem auto;
+      display: block;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -80,9 +122,7 @@
   <header>
     <picture>
       <source srcset="assets/logo.webp" type="image/webp">
-      <img src="assets/logo.webp" alt="Logo 10 Kč – Desetikorunová výzva"
-           class="logo" width="300" height="300" loading="eager"
-           decoding="async" fetchpriority="high" />
+      <img src="assets/logo.webp" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" width="300" height="300" loading="lazy" />
     </picture>
     <h1>Desetikorunová výzva</h1>
     <p class="subtitle">Malý krok. Velký význam. 💛</p>
@@ -111,8 +151,7 @@
         <button class="qr-click" id="openQR">
           <picture>
             <source srcset="assets/qr.webp" type="image/webp">
-            <img src="assets/qr.webp" alt="QR platba 10 Kč" class="qr"
-                 width="250" height="250" loading="lazy" decoding="async">
+            <img src="assets/qr.webp" alt="QR platba 10 Kč" class="qr" width="250" height="250" loading="lazy" />
           </picture>
         </button>
       </div>
@@ -128,8 +167,7 @@
         <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
       </div>
 
-      <a href="https://ib.fio.cz/ib/transparent?a=2803344316"
-         target="_blank" class="btn">
+      <a href="https://ib.fio.cz/ib/transparent?a=2803344316" target="_blank" class="btn">
         Zobrazit transparentní účet
       </a>
     </section>
@@ -188,15 +226,13 @@
       <h2>Naskenuj QR kód v mobilní aplikaci své banky</h2>
       <picture>
         <source srcset="assets/qr.webp" type="image/webp">
-        <img src="assets/qr.webp" alt="QR kód pro příspěvek"
-             class="modal-qr" width="250" height="250" loading="lazy">
+        <img src="assets/qr.webp" alt="QR kód pro příspěvek" class="modal-qr" width="250" height="250" loading="lazy" />
       </picture>
       <p><strong>Číslo účtu:</strong> 2803344316/2010 (Fio banka)</p>
       <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
     </div>
   </div>
 
-  <!-- Použij stejný JS v rootu -->
   <script src="script.js" defer></script>
 </body>
 </html>
