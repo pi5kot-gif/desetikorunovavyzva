@@ -31,7 +31,6 @@
   <link rel="icon" type="image/png" href="assets/favicon.png?v=5">
   <link rel="apple-touch-icon" href="assets/favicon.png?v=5">
   <link rel="shortcut icon" href="assets/favicon.png?v=5">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="theme-color" content="#ffd600">
 
   <!-- ✅ Preload stylu a klíčových obrázků -->
@@ -57,6 +56,7 @@
     .impact-photo img {
       width: 100%;
       max-width: 900px;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
@@ -130,7 +130,8 @@
             width="900" height="600"
             loading="eager"
             decoding="async"
-            fetchpriority="high">
+            fetchpriority="high"
+            style="max-width:100%;height:auto;">
         </picture>
       </div>
 
