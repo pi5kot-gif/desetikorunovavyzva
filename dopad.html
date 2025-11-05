@@ -15,7 +15,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.desetikorunovavyzva.cz/dopad.html" />
 
-  <!-- ✅ Strukturovaná data -->
+  <!-- ⚡ Rychlé spojení a preload -->
+  <link rel="preconnect" href="https://web-production-e164.up.railway.app" crossorigin>
+  <link rel="preload" as="image" href="assets/logo.webp">
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- 🧱 Strukturovaná data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,27 +33,34 @@
   }
   </script>
 
-  <!-- ✅ Favicons -->
+  <!-- 🖼️ Ikony -->
   <link rel="icon" type="image/png" href="assets/favicon.png?v=5">
   <link rel="apple-touch-icon" href="assets/favicon.png?v=5">
   <link rel="shortcut icon" href="assets/favicon.png?v=5">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="theme-color" content="#ffd600">
 
-  <!-- ✅ Styl -->
-  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="style.css"></noscript>
-
-  <!-- 📊 Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ8ZVSB7T3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZQ8ZVSB7T3');
-  </script>
-
   <style>
+    /* 🚀 Skryj obsah do načtení */
+    body {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      background-color: #fff;
+    }
+    body.loaded { visibility: visible; opacity: 1; }
+
+    main, header, footer { animation: fadeIn 0.6s ease forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+
+    img { aspect-ratio: attr(width) / attr(height); }
+
     .impact-photo {
       margin: 40px auto 10px;
       text-align: center;
@@ -72,13 +85,35 @@
       color: #fff;
       background: #222;
     }
-
     footer .legal {
       margin-top: 15px;
       font-size: 14px;
       color: #ccc;
       line-height: 1.6;
     }
+
+    .btn {
+      display: inline-block;
+      background: #ffd600;
+      color: #222;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+      margin: 20px auto;
+    }
+    .btn:hover { transform: scale(1.03); }
+
+    header {
+      text-align: center;
+      margin: 30px auto;
+    }
+    .logo { display: block; margin: 0 auto 10px; }
+    .subtitle { color: #444; font-size: 1.1rem; }
+    main { padding: 0 20px 60px; max-width: 900px; margin: auto; }
+    p { line-height: 1.6; color: #333; font-size: 1.05rem; }
   </style>
 </head>
 
@@ -86,7 +121,14 @@
   <header>
     <picture>
       <source srcset="assets/logo.webp" type="image/webp">
-      <img src="assets/logo.webp" alt="Logo 10 Kč – Desetikorunová výzva" class="logo" width="280" height="280" loading="lazy" style="max-width:100%;height:auto;" />
+      <img src="assets/logo.webp"
+           alt="Logo 10 Kč – Desetikorunová výzva"
+           class="logo"
+           width="280" height="280"
+           loading="eager"
+           decoding="async"
+           fetchpriority="high"
+           style="max-width:100%;height:auto;" />
     </picture>
     <h1>Sleduj dopad</h1>
     <p class="subtitle">Jak se rozvíjí myšlenka výzvy 💛</p>
@@ -114,7 +156,12 @@
       <div class="impact-photo">
         <picture>
           <source srcset="assets/donate.webp" type="image/webp">
-          <img src="assets/donate.webp" alt="Desetikorunová výzva – ilustrace budoucího směřování projektu" loading="lazy">
+          <img src="assets/donate.webp"
+               alt="Desetikorunová výzva – ilustrace budoucího směřování projektu"
+               width="900" height="600"
+               loading="lazy"
+               decoding="async"
+               fetchpriority="low">
         </picture>
       </div>
 
@@ -122,7 +169,9 @@
         Ilustrační fotografie – znázorňuje možný budoucí směr projektu, nikoli jeho současnou činnost.
       </p>
 
-      <a href="index.html" class="btn">Hlavní stránka</a>
+      <div style="text-align:center;">
+        <a href="index.html" class="btn">← Zpět na hlavní stránku</a>
+      </div>
     </section>
   </main>
 
@@ -134,5 +183,12 @@
       Cílem je inspirovat ostatní k myšlence, že i malá částka může mít velký význam. 💛
     </p>
   </footer>
+
+  <script>
+    // 🌟 Po načtení stránky plynule zobrazit obsah
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
 </body>
 </html>
