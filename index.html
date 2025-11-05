@@ -37,12 +37,6 @@
   <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <style>
-    @keyframes pulseIn {
-      0% { transform: scale(0.97); opacity: 0; }
-      60% { transform: scale(1.02); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
     .yellow-box {
       background: #fff7c2;
       border: 2px solid #ffd600;
@@ -50,7 +44,6 @@
       padding: 1.5rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       cursor: default;
-      animation: pulseIn 1.5s ease-out;
       transition: transform 0.3s ease;
     }
 
@@ -242,7 +235,7 @@
 
   <script>
     async function updateProgress() {
-      const API = "https://web-production-e164.up.railway.app/fio"; // ✅ tvoje proxy na Railway
+      const API = "https://web-production-e164.up.railway.app/fio";
 
       try {
         const res = await fetch(API);
@@ -272,7 +265,6 @@
       });
     }
 
-    // 🔗 Funkční tlačítko Sdílej
     const shareButton = document.getElementById("shareButton");
 
     if (shareButton) {
