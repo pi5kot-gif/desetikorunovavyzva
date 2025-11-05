@@ -1,26 +1,19 @@
 // === QR MODÁL ===
 document.addEventListener("DOMContentLoaded", () => {
   const qrModal = document.getElementById("qrModal");
-  const qrImage = document.getElementById("qrImage");
-  const donateStep = document.getElementById("donateStep");
+  const openQR = document.getElementById("openQR");
   const closeModal = document.getElementById("closeModal");
 
-  if (qrModal && qrImage && donateStep && closeModal) {
-    const openModal = () => qrModal.classList.add("show");
-    const closeModalFn = () => qrModal.classList.remove("show");
-
-    qrImage.addEventListener("click", openModal);
-    donateStep.addEventListener("click", openModal);
-    closeModal.addEventListener("click", closeModalFn);
-
-    qrModal.addEventListener("click", (e) => {
-      if (e.target === qrModal) closeModalFn();
+  if (qrModal && openQR && closeModal) {
+    openQR.addEventListener("click", () => (qrModal.style.display = "flex"));
+    closeModal.addEventListener("click", () => (qrModal.style.display = "none"));
+    window.addEventListener("click", (e) => {
+      if (e.target === qrModal) qrModal.style.display = "none";
     });
   }
 
   // === SDÍLENÍ ===
   const shareButton = document.getElementById("shareButton");
-
   if (shareButton) {
     shareButton.addEventListener("click", async () => {
       const shareData = {
