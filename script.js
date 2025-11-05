@@ -9,19 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const openModal = () => qrModal.classList.add("show");
     const closeModalFn = () => qrModal.classList.remove("show");
 
-    // otevření modálu
     qrImage.addEventListener("click", openModal);
     donateStep.addEventListener("click", openModal);
-
-    // zavření modálu
     closeModal.addEventListener("click", closeModalFn);
+
     qrModal.addEventListener("click", (e) => {
       if (e.target === qrModal) closeModalFn();
-    });
-
-    // přidání klávesové podpory (Esc = zavřít)
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModalFn();
     });
   }
 
@@ -41,11 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
           await navigator.share(shareData);
         } else {
           await navigator.clipboard.writeText(shareData.url);
-          alert("🔗 Odkaz byl zkopírován do schránky 💛");
+          alert("Odkaz byl zkopírován do schránky 💛");
         }
       } catch (err) {
-        console.error("❌ Sdílení se nezdařilo:", err);
+        console.error("Sdílení se nezdařilo:", err);
       }
     });
   }
+
+  // === AKTUALIZACE STAVU ÚČTU ===
+  async function updateProgress() {
+    const API = "https://web-production-e164.up.railway.app/fio";
+    try {
+      const res = await fetch(API);
+      const data = await res.json();
+      const balance = parseFloat(data.balance || 0);
+      document.getElementById("progress-text").innerHTML =
+        `Na transparentním účtu je aktuálně: <strong>${balance.toLocaleString("cs-CZ")} Kč</strong>`;
+    } catch (e) {
+      console.error("❌ Chyba při načítání dat:", e);
+      document.getElementById("progress-text").textContent = "Nelze načíst stav účtu 😔";
+    }
+  }
+
+  updateProgress();
+  setInterval(updateProgress, 60000);
 });
