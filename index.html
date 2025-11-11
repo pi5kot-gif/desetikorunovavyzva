@@ -37,29 +37,28 @@
   <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <style>
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color: #222;
+    .yellow-box {
+      background: #fff7c2;
+      border: 2px solid #ffd600;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: default;
+      transition: transform 0.3s ease;
+    }
+
+    .yellow-box:hover { transform: scale(1.01); }
+
+    .yellow-box .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .yellow-box h3 { margin: 0.3rem 0 0.7rem 0; color: #222; }
+
+    .yellow-box p {
       margin: 0;
-      background: #fff;
-      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #333;
     }
-
-    header { margin: 2rem 0; }
-
-    .logo { width: 150px; height: auto; }
-
-    .subtitle { color: #555; font-size: 1.1rem; }
-
-    .intro, .impact-text {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      line-height: 1.6;
-      color: #222;
-    }
-
-    h1, h2, h3 { color: #000; }
 
     .impact-image {
       text-align: center;
@@ -70,19 +69,8 @@
       max-width: 92%;
       height: auto;
       border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 5px 16px rgba(0,0,0,0.15);
     }
-
-    .yellow-box {
-      background: #fff7c2;
-      border: 2px solid #ffd600;
-      border-radius: 14px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .yellow-box:hover { transform: scale(1.01); }
 
     .qr-click {
       background: none;
@@ -90,32 +78,7 @@
       padding: 0;
       cursor: pointer;
     }
-
     .qr-click:hover { transform: scale(1.03); transition: transform 0.2s ease; }
-
-    .btn {
-      display: inline-block;
-      background: #ffd600;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover { background: #ffcc00; }
-
-    footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-      background: #fffbea;
-    }
-
-    .legal { font-size: 0.85rem; line-height: 1.5; }
 
     .modal {
       display: none;
@@ -155,7 +118,6 @@
       font-weight: bold;
       cursor: pointer;
     }
-
     .close:hover { color: #000; }
 
     .modal-qr {
@@ -169,14 +131,6 @@
     #qrModal .modal-content p {
       text-align: center;
     }
-
-    .account p { margin: 0.3rem 0; }
-
-    .note { margin: 1rem 0; font-size: 1rem; color: #333; }
-
-    .progress-section { margin: 3rem 0; }
-
-    .progress-section p { margin: 0.5rem 0; }
   </style>
 </head>
 
@@ -206,14 +160,8 @@
     <section class="impact-image">
       <picture>
         <source srcset="assets/heart-people.webp" type="image/webp">
-        <img src="assets/heart-people.webp" alt="Lidé tvořící srdce – symbol Desetikorunové výzvy" width="900" height="650" loading="lazy">
+        <img src="assets/heart-people.webp" alt="Lidé tvořící srdce – symbol Desetikorunové výzvy" width="900" height="650" loading="lazy" />
       </picture>
-    </section>
-
-    <!-- 💬 TEXT DOPAD -->
-    <section class="impact-text">
-      <p>Každá koruna se počítá. Dary z Desetikorunové výzvy zůstávají bezpečně na transparentním účtu, dokud nevznikne dostatečná částka na skutečnou pomoc.  
-      Na všem pečlivě pracuje tým lidí, který dohlíží na to, aby prostředky šly tam, kde budou mít největší smysl – přímo k lidem, kteří je potřebují nejvíc.</p>
     </section>
 
     <section class="donate">
@@ -247,11 +195,42 @@
         Zobrazit transparentní účet
       </a>
 
-      <div style="margin-top:1.5em;margin-bottom:1em;text-align:center;line-height:1.5">
-        <p style="font-weight:600;text-decoration:underline;font-size:1.1rem;color:#222;margin:0">
-          Každý měsíc 150 Kč za ČT, 300 Kč za Netflix…<br>a jednorázově 10 Kč za víru v dobré lidi?
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 1.5em;
+          margin-bottom: 1em;
+          text-align: center;
+          line-height: 1.5;
+          padding: 0 1.2rem;
+          box-sizing: border-box;
+        "
+      >
+        <p
+          style="
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 1.1rem;
+            color: #222;
+            margin: 0;
+          "
+        >
+          Každý měsíc 150&nbsp;Kč&nbsp;za&nbsp;ČT,&nbsp;300&nbsp;Kč&nbsp;za&nbsp;Netflix…<br />
+          a&nbsp;jednorázově&nbsp;10&nbsp;Kč&nbsp;za&nbsp;víru&nbsp;v&nbsp;dobré&nbsp;lidi?
         </p>
-        <p style="font-size:1.35rem;font-weight:800;color:#000;margin-top:.4em">To je fér. 💛</p>
+        <p
+          style="
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #000;
+            margin-top: 0.4em;
+          "
+        >
+          To&nbsp;je&nbsp;fér.&nbsp;💛
+        </p>
       </div>
     </section>
 
@@ -263,8 +242,8 @@
           <div class="icon">💛</div>
           <h3>Proč jít do výzvy!</h3>
           <p>
-            Je to jen deset korun.<br>
-            Ale může ukázat, že ti není jedno, co se kolem děje.<br>
+            Je to jen deset korun.<br />
+            Ale může ukázat, že ti není jedno, co se kolem děje.<br />
             Přidej se – právě takhle začínají velké věci.
           </p>
         </div>
@@ -297,8 +276,8 @@
   <footer>
     <p>© 2025 Desetikorunová výzva – M.P.</p>
     <p class="legal">
-      Desetikorunová výzva je dobrovolná iniciativa, nikoli veřejná sbírka podle zákona č.&nbsp;117/2001&nbsp;Sb.<br>
-      Příspěvky jsou dobrovolné a využívají se výhradně pro rozvoj projektu a jeho aktivit.<br>
+      Desetikorunová výzva je dobrovolná iniciativa, nikoli veřejná sbírka podle zákona č.&nbsp;117/2001&nbsp;Sb.<br />
+      Příspěvky jsou dobrovolné a využívají se výhradně pro rozvoj projektu a jeho aktivit.<br />
       Cílem je inspirovat ostatní k myšlence, že i malá částka může mít velký význam. 💛
     </p>
   </footer>
@@ -308,8 +287,15 @@
       <span class="close" id="closeModal">&times;</span>
       <h2>Naskenuj QR kód v mobilní aplikaci své banky</h2>
       <picture>
-        <source srcset="assets/qr.webp" type="image/webp">
-        <img src="assets/qr.webp" alt="QR kód pro příspěvek" class="modal-qr" width="250" height="250" loading="lazy" />
+        <source srcset="assets/qr.webp" type="image/webp" />
+        <img
+          src="assets/qr.webp"
+          alt="QR kód pro příspěvek"
+          class="modal-qr"
+          width="250"
+          height="250"
+          loading="lazy"
+        />
       </picture>
       <p><strong>Číslo účtu:</strong> 2803344316/2010 (Fio banka)</p>
       <p><strong>Zpráva pro příjemce:</strong> Desetikorunová výzva</p>
