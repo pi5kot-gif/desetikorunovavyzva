@@ -59,6 +59,8 @@
       color: #222;
     }
 
+    h1, h2, h3 { color: #000; }
+
     .impact-image {
       text-align: center;
       margin: 3rem 0 2rem 0;
@@ -70,8 +72,6 @@
       border-radius: 14px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
-
-    h1, h2, h3 { color: #000; }
 
     .yellow-box {
       background: #fff7c2;
@@ -92,6 +92,20 @@
     }
 
     .qr-click:hover { transform: scale(1.03); transition: transform 0.2s ease; }
+
+    .btn {
+      display: inline-block;
+      background: #ffd600;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover { background: #ffcc00; }
 
     footer {
       margin-top: 4rem;
@@ -152,30 +166,17 @@
       height: auto;
     }
 
-    #qrModal .modal-content p { text-align: center; }
-
-    .note { margin: 1rem 0; font-size: 1rem; color: #333; }
-
-    .btn {
-      display: inline-block;
-      background: #ffd600;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: background 0.3s ease;
+    #qrModal .modal-content p {
+      text-align: center;
     }
 
-    .btn:hover { background: #ffcc00; }
-
     .account p { margin: 0.3rem 0; }
+
+    .note { margin: 1rem 0; font-size: 1rem; color: #333; }
 
     .progress-section { margin: 3rem 0; }
 
     .progress-section p { margin: 0.5rem 0; }
-
   </style>
 </head>
 
@@ -211,15 +212,10 @@
 
     <!-- 💬 TEXT DOPAD -->
     <section class="impact-text">
-      <p>Každý den utratíme deset korun, ani si toho nevšimneme.  
-      Ale co kdyby tentokrát těch deset korun znamenalo něco víc?</p>
-      <p><strong>Desetikorunová výzva</strong> je jednoduchá myšlenka – ukázat, že i malá částka může mít sílu spojovat a inspirovat.  
-      Nejde o sbírku ani o platbu za produkt. Je to symbolické vyjádření účasti a víry v to, že i drobnosti můžou změnit svět.</p>
-      <p>Všechny příspěvky jsou na <strong>transparentním účtu Fio banky</strong>, kde můžeš sledovat, jak výzva roste.  
-      Až přijde čas, promění se v něco skutečného – projekt, který bude dál rozvíjet myšlenku, že i malý krok může mít velký dopad.</p>
+      <p>Každá koruna se počítá. Dary z Desetikorunové výzvy zůstávají bezpečně na transparentním účtu, dokud nevznikne dostatečná částka na skutečnou pomoc.  
+      Na všem pečlivě pracuje tým lidí, který dohlíží na to, aby prostředky šly tam, kde budou mít největší smysl – přímo k lidem, kteří je potřebují nejvíc.</p>
     </section>
 
-    <!-- 💛 QR sekce -->
     <section class="donate">
       <h2>Přidej se k myšlence 💛</h2>
       <p class="donate-desc">
@@ -250,9 +246,47 @@
       <a href="https://ib.fio.cz/ib/transparent?a=2803344316" target="_blank" class="btn">
         Zobrazit transparentní účet
       </a>
+
+      <div style="margin-top:1.5em;margin-bottom:1em;text-align:center;line-height:1.5">
+        <p style="font-weight:600;text-decoration:underline;font-size:1.1rem;color:#222;margin:0">
+          Každý měsíc 150 Kč za ČT, 300 Kč za Netflix…<br>a jednorázově 10 Kč za víru v dobré lidi?
+        </p>
+        <p style="font-size:1.35rem;font-weight:800;color:#000;margin-top:.4em">To je fér. 💛</p>
+      </div>
     </section>
 
-    <!-- 📈 Výzva roste -->
+    <section class="steps">
+      <h2>Jak to funguje</h2>
+
+      <div class="step">
+        <div class="btn large yellow-box">
+          <div class="icon">💛</div>
+          <h3>Proč jít do výzvy!</h3>
+          <p>
+            Je to jen deset korun.<br>
+            Ale může ukázat, že ti není jedno, co se kolem děje.<br>
+            Přidej se – právě takhle začínají velké věci.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <button class="btn large" id="shareButton">
+          <div class="icon">📣</div>
+          <h3>Sdílej</h3>
+          <p>Pošli dál odkaz na výzvu. Každé sdílení pomáhá šířit myšlenku dál 💛</p>
+        </button>
+      </div>
+
+      <div class="step">
+        <a href="dopad.html" class="btn large link">
+          <div class="icon">🌍</div>
+          <h3>Sleduj dopad</h3>
+          <p>Sleduj, jak se projekt vyvíjí a kolik lidí se k myšlence přidává.</p>
+        </a>
+      </div>
+    </section>
+
     <section class="progress-section">
       <h2>💛 Výzva roste</h2>
       <p>Společně ukazujeme, že i malá částka může nést velkou myšlenku.</p>
@@ -269,7 +303,6 @@
     </p>
   </footer>
 
-  <!-- Modal QR -->
   <div class="modal" id="qrModal">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
