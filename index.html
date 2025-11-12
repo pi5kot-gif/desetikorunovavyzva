@@ -129,6 +129,22 @@
     }
 
     #qrModal .modal-content p { text-align: center; }
+
+    .mail-button {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 8px 18px;
+      background-color: #ffd600;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .mail-button:hover {
+      background-color: #ffcc00;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 
@@ -230,6 +246,10 @@
   </main>
 
   <footer>
+    <p>Na transparentním účtu je aktuálně: <strong>50 Kč</strong></p>
+
+    <a href="mailto:desetikorunovavyzva@gmail.com" class="mail-button">Napište nám</a>
+
     <p>© 2025 Desetikorunová výzva</p>
     <p class="legal">
       Desetikorunová výzva je dobrovolná iniciativa, nikoli veřejná sbírka podle zákona č.&nbsp;117/2001&nbsp;Sb.<br />
